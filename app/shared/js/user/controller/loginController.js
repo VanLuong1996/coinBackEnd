@@ -1,6 +1,5 @@
 angular.module('user').controller('loginController',
-    function ($scope, $rootScope, $state, $http, gettext, md5, userServiceHttp,
-              userRemoteService) {
+    function ($scope, $rootScope, $state, $http, gettext) {
 
         $scope.user = undefined;
 

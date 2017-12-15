@@ -33,42 +33,6 @@ angular.module('remote').factory('userRemoteService', function ($http, config, U
             });
         },
 
-        requestResetPassword: function (opts, successCallback, failureCallback) {
-            return $http({
-                url: config.baseURL + config.apiVersion + '/users/requestResetPassword?email=' + opts.email,
-                method: 'POST',
-                data: ''
-            }).success(function (data, status, headers, config) {
-                successCallback(data);
-            }).error(function (data, status, headers, config) {
-                failureCallback(data, status, headers, config);
-            });
-        },
-
-        resetPassword: function (opts, successCallback, failureCallback) {
-            return $http({
-                url: config.baseURL + config.apiVersion + '/users/resetPassword',
-                method: 'PUT',
-                data: opts.resetPasswordTokenDTO
-            }).success(function (data, status, headers, config) {
-                successCallback(data);
-            }).error(function (data, status, headers, config) {
-                failureCallback(data, status, headers, config);
-            });
-        },
-
-
-        addUser: function (newUserDTO, successCallback, failureCallback) {
-            return $http({
-                url: config.baseURL + config.apiVersion + '/admin/users',
-                method: 'POST',
-                data: newUserDTO
-            }).success(function (data, status, headers, config) {
-                successCallback(data);
-            }).error(function (data, status, headers, config) {
-                failureCallback(data, status, headers, config);
-            });
-        },
 
         updateUser: function (updatedUserDTO, successCallback, failureCallback) {
             return $http({
@@ -82,49 +46,6 @@ angular.module('remote').factory('userRemoteService', function ($http, config, U
             });
         },
 
-
-        deleteUser: function (userId, successCallback, failureCallback) {
-            return $http({
-                url: config.baseURL + config.apiVersion + '/admin/users/' + userId,
-                method: 'DELETE',
-                data: ''
-            }).success(function (data, status, headers, config) {
-                successCallback(data);
-            }).error(function (data, status, headers, config) {
-                failureCallback(data, status, headers, config);
-            });
-        },
-
-        deleteAllUser: function (customerId, successCallback, failureCallback) {
-            return $http({
-                url: config.baseURL + config.apiVersion + '/admin/users?customerId=' + customerId,
-                method: 'DELETE',
-                data: ''
-            }).success(function (data, status, headers, config) {
-                successCallback(data);
-            }).error(function (data, status, headers, config) {
-                failureCallback(data, status, headers, config);
-            });
-        },
-
-        getListUser: function (opts, successCallback, failureCallback) {
-            return $http({
-                url: config.baseURL + config.apiVersion + '/admin/users',
-                method: 'GET',
-                params: {
-                    pageIndex: opts.pageIndex,
-                    pageSize: opts.pageSize,
-                    orderBy: opts.orderBy,
-                    orderType: opts.orderType,
-                    searchText: opts.searchText
-                },
-                data: ''
-            }).success(function (data, status, headers, config) {
-                successCallback(data);
-            }).error(function (data, status, headers, config) {
-                failureCallback(data, status, headers, config);
-            });
-        },
 
         getUserInfo: function (id, successCallback, failureCallback) {
             return $http({
