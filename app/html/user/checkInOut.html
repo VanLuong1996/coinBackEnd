@@ -1,0 +1,312 @@
+<div class="main-content">
+    <div  ng-class="$state.includes('users.detail')?'col-lg-7 col-sm-7 col-md-7 main-left':'col-lg-12 col-sm-12 col-md-12 main-left full-width'" >
+    <div class="header-content">
+        <h2>Wallet</h2>
+    </div>
+    <div class="main-content-left  table margin-top-10" style="display: table">
+
+    </div>
+
+
+</div>
+    <div class="col-lg-5 col-sm-5 col-md-5  main-right" ui-view="detail" ng-if="$state.includes('users.detail')"></div>
+</div>
+<script data-remove="false" data-concat="false">
+    function showDetail(id) {
+//$('.customer-list').css('background-color', '');
+//$('#' + id).css('background-color', '#dddddd');
+        var campaignElement = $('.customer-list');
+        campaignElement.each(function() {
+            if($(this).hasClass('background-selected')) {
+                $(this).removeClass('background-selected');
+            }
+        });
+        $('#' + id).addClass('background-selected');
+    }
+    var setHeightTimeout;
+    var calculateLayoutList = function () {
+        if (setHeightTimeout) window.clearTimeout(setHeightTimeout);
+
+        setHeightTimeout = setTimeout(function () {
+            var height = $(window).height();
+            var fullHeightScroll = function ($ele) {
+                if ($ele.length === 0) return;
+                $ele.css({
+                    height: height - $ele.offset().top,
+                    position: 'relative',
+                    'overflow-y': 'hidden'
+                });
+                $ele.perfectScrollbar('update');
+            };
+
+            fullHeightScroll($('#content-list-wrapper'));
+
+        });
+    };
+
+    var initScroll = function ($ele) {
+        $ele.perfectScrollbar();
+    };
+
+    initScroll($('#content-list-wrapper'));
+    initScroll($('#main-content'));
+    initScroll($('.scrollingDiv'));
+
+
+    calculateLayoutList();
+
+
+    $(document).ready(function () {
+        $(window).on('resize', function () {
+            calculateLayoutList();
+
+            var height = $(window).height();
+            $('body').css('height', height);
+        });
+
+    });
+</script>
+<script type="text/ng-template" id="confirm_delete_modal.html">
+    <div modal-movable>
+        <div class="modal-header">
+            <button type="button" class="close" ng-click="$dismiss()" aria-hidden="true"></button>
+            <h4 class="modal-title"><i class="icon-question"></i> Xoá bản ghi</h4>
+        </div>
+        <div class="modal-body">
+            <p>Bạn có muốn xoá các bản ghi đã chọn không?</p>
+        </div>
+        <div class="modal-footer">
+            <button type="button" ng-click="$dismiss()" class="btn btn-default" data-dismiss="modal">Không</button>
+            <button type="button" ng-click="$close('yes')" class="btn btn-primary" data-dismiss="modal">Có</button>
+        </div>
+    </div>
+</script>
+
+<script type="text/ng-template" id="editPopup.html">
+    <div modal-movable>
+        <div class="modal-header">
+            <button type="button" class="close" ng-click="$dismiss()" aria-hidden="true"></button>
+            <h4 class="modal-title"><i class="icon-plus"></i> {{title}}</h4>
+        </div>
+        <form name="region" data-ng-submit="region.$valid && vm.saveRegion()" novalidate="">
+            <div class="modal-body">
+                <div class="row">
+
+                    <div class="col-lg-4 col-sm-4 col-xs-12 margin-top-10" ng-class="{ 'has-error' : region.code.$invalid && !region.code.$pristine }">
+                        <label>ID nhân viên<span class="validate">(*)</span></label>
+                        <input name="code" required="" type="text" class="form-control textTransform" ng-modelegionCode">
+                        <span ng-show="region.$submitted">
+               <p ng-show="region.code.$error.required " class="validate">
+                   Vui lòng điền vào trường này.
+               </p></span>
+                        <span ng-show="cmd == 'true'">
+                <p class="validate"> Mã nhân viên đã tồn tại</p>
+
+               </span>
+                    </div>
+                    <div class="col-lg-4 col-sm-4 col-xs-12 margin-top-10" ng-class="{ 'has-error' : region.name.$invalid && !region.name.$pristine }">
+                        <label>Tên nhân viên <span class="validate">(*)</span></label>
+                        <input name="name" required="" type="text" class="form-control" ng-model="RegionName">
+                        <span ng-show="region.$submitted">
+               <p ng-show="region.name.$error.required " class="validate">
+                   Vui lòng điền vào trường này.
+               </p></span>
+                    </div>
+                    <div class="col-lg-4 col-sm-4 col-xs-12 margin-top-10">
+                        <label>Email</label>
+                        <input type="email" class="form-control" data-ng-model="sd">
+                    </div>
+
+                </div>
+                <div class="row">
+                    <div class="col-lg-4 col-sm-4 col-xs-12 margin-top-10">
+                        <label>Team</label>
+                        <ui-select data-ng-model="iid">
+                            <ui-select-match placeholder="Xin mời chọn"  allow-clear="true"  >{{$select.selected.team}}
+                                <a class='btn btn-xs btn-link pull-right clear-buttom'></a></ui-select-match>
+                            <ui-select-choices repeat="pos.team_code as pos in optionData ">
+                                <span ng-bind-html="pos.team | highlight: $select.search"></span>
+
+                            </ui-select-choices>
+                        </ui-select>
+                    </div>
+                    <div class="col-lg-4 col-sm-4 col-xs-12 margin-top-10">
+                        <label>Mật khâu</label>
+                        <input type="password" class="form-control" data-ng-model="a">
+                    </div>
+            </div>
+
+            </div>
+
+
+            <div class="modal-footer">
+                <button type="button" ng-click="$dismiss()" class="btn btn-default" data-dismiss="modal">Huỷ bỏ</button>
+                <button type="submit" class="btn btn-primary" data-dismiss="modal">Lưu lại</button>
+            </div>
+        </form>
+    </div>
+</script>
+<!--<div class="main-content">-->
+<!--<div class="row">-->
+<!--<div class="main-content-right" ui-view="detail"></div>-->
+<!--<div class="main-content-left">-->
+<!--<div class="list-header">-->
+<!--<h3 class="no-margin-top" translate>Quản lý nhân viên</h3>-->
+<!--<strong class="text-account total">{{total}}</strong>-->
+
+<!--<div class="row filter-role icon-bar">-->
+<!--<div class="col-xs-6">-->
+<!--<div class="input-group">-->
+<!--<input type="text"-->
+<!--class="sb-modal-form-control input-sm search-form width-85 no-border no-padding-left inline-block"-->
+<!--placeholder="{{'Tìm kiếm nhân viên' | translate }}"-->
+<!--ng-model="searchText">-->
+<!--<span class="input-group-btn padding-left">-->
+<!--<a href="">-->
+<!--<i class="fa fa-times"-->
+<!--ng-show="searchText"-->
+<!--ng-click="searchText = ''"></i>-->
+<!--</a>-->
+<!--</span>-->
+<!--</div>-->
+<!--</div>-->
+<!--<div class="col-xs-6">-->
+<!--<ul class="data-filter pull-right float-list">-->
+<!--<li>-->
+<!--<i class="fa fa-sort"-->
+<!--ns-popover-->
+<!--ns-popover-theme="ns-popover-tooltip-theme"-->
+<!--ns-popover-template="filter-sort-opp-popover"-->
+<!--ns-popover-timeout=10000000-->
+<!--ns-popover-trigger="click"-->
+<!--ns-popover-placement="left" id="filter-sort-opp"></i>-->
+<!--<script type="text/ng-template" id="filter-sort-opp-popover">-->
+<!--<div class="ns-popover-tooltip border-customer">-->
+<!--<div class="triangle border-customer"></div>-->
+<!--<h3 class="ns-popover-title background-customer" translate>Sắp xếp</h3>-->
+<!--<table class="table table-hover no-margin" style="width: 200px">-->
+<!--<tr class="popover-item" ng-repeat="orderBy in orderByList"-->
+<!--ng-click="loadOrder(orderBy);hidePopover();">-->
+<!--<td width="100%">-->
+<!--{{orderBy.name | translate}}-->
+<!--<i class="fa fa-check" style="float: right"-->
+<!--ng-show="orderBy.selected"></i>-->
+<!--</td>-->
+<!--</tr>-->
+<!--</table>-->
+<!--</div>-->
+<!--</script>-->
+
+<!--</li>-->
+<!--<li>-->
+<!--<i class="fa fa-plus text-account" ng-click="addUser()"></i>-->
+<!--</li>-->
+<!--</ul>-->
+<!--</div>-->
+<!--</div>-->
+<!--</div>-->
+<!--<div class="row header-content-list table">-->
+<!--<div class="table-heading">-->
+<!--<div class="table-row">-->
+<!--<div class="table-cell width-5 text-left">-->
+<!--<span translate>ID</span>-->
+<!--</div>-->
+<!--<div class="table-cell width-25 text-left">-->
+<!--<span translate>Name</span>-->
+<!--</div>-->
+
+<!--<div class="table-cell width-25 text-left">-->
+<!--<span translate>Email</span>-->
+<!--</div>-->
+<!--</div>-->
+<!--</div>-->
+<!--</div>-->
+<!--<div lr-infinite-scroll="loadMoreItems" scroll-threshold="200" class="scrollingDiv"-->
+<!--id="content-list-wrapper">-->
+<!--<div ng-repeat="user in userList track by $index" id="{{user.id}}"-->
+<!--ui-sref="users.detail({userId: user.id})"-->
+<!--ng-class="{'background-light-gray': $index%2==1}"-->
+<!--class="customer-list hover-item table" onclick="showDetail(this.id)">-->
+<!--<div class="table-item hover-item">-->
+<!--<div class="table-row">-->
+<!--<div class="table-cell width-5">-->
+<!--<span>{{user.id}}</span>-->
+<!--</div>-->
+<!--<div class="table-cell width-25">-->
+<!--</div>-->
+
+<!--<div class="table-cell width-25">-->
+<!--</div>-->
+<!--<div class="table-cell width-30">-->
+<!--<span ng-if="user.email"><i class="fa fa-envelope-o"></i>{{user.email}}<br></span>-->
+<!--<span ng-if="user.email && user.phone"><i class="fa fa-phone"></i>{{user.phone}}</span>-->
+<!--</div>-->
+<!--<div class="table-cell width-5 text-center">-->
+<!--<i class="fa fa-check" ng-if="user.status == 'ACTIVE'"-->
+<!--data-toggle="tooltip" title="{{'Active' | translate}}"></i>-->
+<!--<i class="fa fa-close" ng-if="user.status  != 'ACTIVE'"-->
+<!--data-toggle="tooltip" title="{{'Inactive' | translate}}"></i>-->
+
+<!--</div>-->
+<!--<div class="table-cell width-10">-->
+<!--<i class="fa fa-trash-o right-icon"-->
+<!--ng-click="$event.stopPropagation(); deleteUser(user)"></i>-->
+<!--<i class="fa fa-pencil-square-o" style="float: right"-->
+<!--ng-click="$event.stopPropagation();editUser(user)"></i>-->
+<!--</div>-->
+<!--</div>-->
+<!--</div>-->
+<!--</div>-->
+
+<!--</div>-->
+
+<!--</div>-->
+<!--</div>-->
+<!--</div>-->
+<!--<script data-remove="false" data-concat="false">-->
+<!--function showDetail(id) {-->
+<!--$('.customer-list').css('background-color', '');-->
+<!--$('#' + id).css('background-color', '#dddddd');-->
+<!--}-->
+<!--var setHeightTimeout;-->
+<!--var calculateLayoutList = function () {-->
+<!--if (setHeightTimeout) window.clearTimeout(setHeightTimeout);-->
+
+<!--setHeightTimeout = setTimeout(function () {-->
+<!--var height = $(window).height();-->
+<!--var fullHeightScroll = function ($ele) {-->
+<!--if ($ele.length === 0) return;-->
+<!--$ele.css({-->
+<!--height: height - $ele.offset().top,-->
+<!--position: 'relative',-->
+<!--'overflow-y': 'hidden'-->
+<!--});-->
+<!--$ele.perfectScrollbar('update');-->
+<!--};-->
+
+<!--fullHeightScroll($('#content-list-wrapper'));-->
+
+<!--});-->
+<!--};-->
+
+<!--var initScroll = function ($ele) {-->
+<!--$ele.perfectScrollbar();-->
+<!--};-->
+
+<!--initScroll($('#content-list-wrapper'));-->
+<!--initScroll($('#main-content'));-->
+
+
+<!--calculateLayoutList();-->
+
+
+<!--$(document).ready(function () {-->
+<!--$(window).on('resize', function () {-->
+<!--calculateLayoutList();-->
+
+<!--var height = $(window).height();-->
+<!--$('body').css('height', height);-->
+<!--});-->
+
+<!--});-->
+<!--</script>-->

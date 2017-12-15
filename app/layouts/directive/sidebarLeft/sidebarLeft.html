@@ -1,0 +1,80 @@
+<div>
+    <aside id="sidebar-left" class="sidebar-circle">
+
+        <!-- Start left navigation - profile shortcut -->
+        <div class="sidebar-content">
+            <span class="header-username">{{user.fullName}}</span>
+        </div>
+        <!-- /.sidebar-content -->
+        <!--/ End left navigation -  profile shortcut -->
+        <!-- Start left navigation - menu -->
+        <ul class="sidebar-menu">
+
+            <!-- Start navigation - dashboard -->
+            <li class="submenu active">
+                <a href="javascript:void(0);">
+                    <span class="icon"><i class="fa fa-home"></i></span>
+                    <span class="text main-menu-text">GEM VIET NAM</span>
+                    <span class="arrow"></span>
+                    <span class="selected"></span>
+                </a>
+                <ul>
+                    <li ui-sref-active="active text-left-menu-active">
+                        <a ui-sref="dashboard">
+                            <span>Dashboard</span>
+                        </a>
+                    </li>
+
+                    <li ui-sref-active="active text-left-menu-active">
+                    <a ui-sref="wallet">
+                        <span>Wallet</span>
+                    </a>
+                    </li>
+
+                    <li ui-sref-active="active text-left-menu-active">
+                        <a ui-sref="logs">
+                            <span>Event Logs</span>
+                        </a>
+                    </li>
+
+                    <li ui-sref-active="active text-left-menu-active">
+                        <a ui-sref="services">
+                            <span>Services</span>
+                        </a>
+                    </li>
+
+                    <li ui-sref-active="active text-left-menu-active">
+                        <a ui-sref="checkInOut">
+                            <span>Check InOut</span>
+                        </a>
+                    </li>
+
+                    <li ui-sref-active="active text-left-menu-active">
+                        <a ui-sref="voting">
+                            <span>Voting</span>
+                        </a>
+                    </li>
+
+                    <li ui-sref-active="active text-left-menu-active">
+                        <a ui-sref="settings">
+                            <span>Setting</span>
+                        </a>
+                    </li>
+
+                    <li ui-sref-active="active text-left-menu-active">
+                        <a ng-click="logout()">
+                            <span>Logout</span>
+                        </a>
+                    </li>
+
+                </ul>
+            </li>
+        </ul>
+
+        <!--/ End navigation - dashboard -->
+
+    </aside>
+    <!-- /#sidebar-left -->
+    <!--/ END SIDEBAR LEFT -->
+
+</div>

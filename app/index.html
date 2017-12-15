@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html ng-app="gCoinApp">
+
+<head>
+    <title>GEM Coin System</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
+
+    <title>GEM Staff Manager - Application</title>
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,600italic,400italic' rel='stylesheet'
+          type='text/css' data-remove="false" data-concat="false">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.css"
+          data-remove="false" data-concat="false">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/angular-toastr/1.7.0/angular-toastr.min.css"
+          data-remove="false" data-concat="false">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/2.3.1/fullcalendar.min.css"
+          data-remove="false" data-concat="false">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.5.3/jquery.datetimepicker.min.css"
+          data-remove="false" data-concat="false">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          data-remove="false" data-concat="false">
+
+    <!-- build:css styles/vendor.css -->
+    <!-- bower:css -->
+    <link rel="stylesheet" href="vendor/bootstrap/dist/css/bootstrap.css" />
+    <link rel="stylesheet" href="vendor/animate.css/animate.css" />
+    <link rel="stylesheet" href="vendor/perfect-scrollbar/css/perfect-scrollbar.css" />
+    <link rel="stylesheet" href="vendor/ngImgCrop/compile/minified/ng-img-crop.css" />
+    <!-- endbower -->
+    <!-- endbuild -->
+
+
+    <!-- build:css styles/app.css -->
+    <link rel="stylesheet" type="text/css" href="tmp/app.css"/>
+    <!--<link rel="stylesheet" href="//cdn.jsdelivr.net/fontawesome/4.5.0/css/font-awesome.css">-->
+    <!--<link rel="stylesheet" href="//cdn.jsdelivr.net/bootstrap/3.3.6/css/bootstrap.min.css">-->
+    <link rel="stylesheet" href="//mgcrea.github.io/angular-strap/styles/libs.min.css">
+    <link rel="stylesheet" href="//mgcrea.github.io/angular-strap/styles/docs.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-select/0.20.0/select.css">
+    <!-- endbuild -->
+
+</head>
+<body class="page-session page-sound page-header-fixed page-sidebar-fixed ">
+<div id="loading">
+    <div class="spinner">
+        <div class="bounce1"></div>
+        <div class="bounce2"></div>
+        <div class="bounce3"></div>
+    </div>
+</div>
+
+<!-- START WRAPPER -->
+<section id="wrapper" class="ng-cloak">
+    <!-- START HEADER -->
+    <header-content
+        ng-if="!$state.includes('login') && !$state.includes('forgotPassword')&& !$state.includes('resetPassword')"></header-content>
+    <!-- /#header -->
+    <!--/ END HEADER -->
+
+    <!-- START SIDEBAR LEFT -->
+    <sidebar-left
+        ng-if="!$state.includes('login') && !$state.includes('forgotPassword')&& !$state.includes('resetPassword')" user="user"></sidebar-left>
+    <!-- /#sidebar-left -->
+    <!--/ END SIDEBAR LEFT -->
+
+    <!-- START PAGE CONTENT -->
+
+    {{$state.name}}
+    <section id="page-content"
+             ng-class="{'margin-lef-0 height-100-percent' : ($state.includes('login') || $state.includes('forgotPassword') || $state.includes('resetPassword'))}">
+
+        <!-- START HEADER CONTENT -->
+        <!-- <breadcrumbs></breadcrumbs> -->
+        <!-- /.header-content -->
+        <!--/ END HEADER CONTENT -->
+
+        <!-- START BODY CONTENT -->
+        <div id="" class="container-fluid">
+            <div ui-view="list" class="body-content" id="listView">
+            </div>
+
+        </div>
+        <!-- /.body-content -->
+        <!--/ END BODY CONTENT -->
+
+        <!-- START FOOTER CONTENT -->
+        <!--<footer-content> </footer-content>&lt;!&ndash; /.footer-content &ndash;&gt;-->
+        <!--/ END FOOTER CONTENT -->
+
+    </section>
+    <!-- /#page-content -->
+    <!--/ END PAGE CONTENT -->
+
+
+</section>
+<!-- /#wrapper -->
+<!--/ END WRAPPER -->
+<!-- START @BACK TOP -->
+<div back-top id="back-top" class="animated pulse circle">
+    <i class="fa fa-angle-up"></i>
+</div>
+<!-- /#back-top -->
+<!--/ END BACK TOP -->
+
+
+<!-- Lib -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js" data-remove="false"
+        data-concat="false"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js" data-remove="false"
+        data-concat="false"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0/angular.min.js" data-remove="false"
+        data-concat="false"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0/angular-animate.min.js" data-remove="false"
+        data-concat="false"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0/angular-cookies.min.js" data-remove="false"
+        data-concat="false"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-md5/0.1.7/angular-md5.min.js" data-remove="false"
+        data-concat="false"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.perfect-scrollbar/0.6.10/js/min/perfect-scrollbar.jquery.min.js"
+    data-remove="false" data-concat="false"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-toastr/1.7.0/angular-toastr.min.js" data-remove="false"
+        data-concat="false"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-toastr/1.7.0/angular-toastr.tpls.min.js" data-remove="false"
+        data-concat="false"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/danialfarid-angular-file-upload/4.2.1/ng-file-upload-all.min.js"
+        data-remove="false" data-concat="false"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-gettext/2.0.5/angular-gettext.min.js" data-remove="false"
+        data-concat="false"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.6/moment.min.js" data-remove="false"
+        data-concat="false"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/2.3.1/fullcalendar.min.js" data-remove="false"
+        data-concat="false"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/2.3.1/lang-all.js" data-remove="false"
+        data-concat="false"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-calendar/1.0.0/calendar.min.js" data-remove="false"
+        data-concat="false"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.5.3/build/jquery.datetimepicker.full.min.js" data-remove="false"
+        data-concat="false"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-dynamic-locale/0.1.30/tmhDynamicLocale.min.js"
+        data-remove="false" data-concat="false"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.min.js"
+        data-remove="false" data-concat="false"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.inputmask/3.1.63/jquery.inputmask.bundle.min.js"
+        data-remove="false" data-concat="false"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-select/0.20.0/select.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-sanitize/1.5.0-rc.2/angular-sanitize.min.js"></script>
+<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-strap/2.3.8/angular-strap.min.js"></script>-->
+<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-i18n/1.6.5/angular-locale_en-us.js"></script>-->
+<!--<script src="https://cdn.jsdelivr.net/angularjs/1.5.5/angular.min.js" data-semver="1.5.5"></script>-->
+<!--<script src="https://cdn.jsdelivr.net/angularjs/1.5.5/angular-animate.min.js" data-semver="1.5.5"></script>-->
+<!--<script src="https://cdn.jsdelivr.net/angularjs/1.5.5/angular-sanitize.min.js" data-semver="1.5.5"></script>-->
+<!--<script src="https://mgcrea.github.io/angular-strap/dist/angular-strap.js" data-semver="v2.3.8"></script>-->
+<!--<script src="https://mgcrea.github.io/angular-strap/dist/angular-strap.tpl.js" data-semver="v2.3.8"></script>-->
+<!--<script src="https://mgcrea.github.io/angular-strap/docs/angular-strap.docs.tpl.js" data-semver="v2.3.8"></script>-->
+<script src="vendor/angular-strap/dist/angular-strap.js"></script>
+<script src="vendor/angular-strap/dist/angular-strap.tpl.js"></script>
+<script src="https://mgcrea.github.io/angular-strap/docs/angular-strap.docs.tpl.js" data-semver="v2.3.8"></script>
+<!-- build:js scripts/vendor.js -->
+<!-- bower:js -->
+<script src="vendor/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="vendor/jquery.cookie/jquery.cookie.js"></script>
+<script src="vendor/underscore/underscore.js"></script>
+<script src="vendor/angular-route/angular-route.js"></script>
+<script src="vendor/angular-ui-router/release/angular-ui-router.js"></script>
+<script src="vendor/angular-resource/angular-resource.js"></script>
+<script src="vendor/angular-mocks/angular-mocks.js"></script>
+<script src="vendor/angular-ui-utils/ui-utils.js"></script>
+<script src="vendor/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+<script src="vendor/moment/moment.js"></script>
+<script src="vendor/handlebars/handlebars.js"></script>
+<script src="vendor/ionsound/js/ion.sound.js"></script>
+<script src="vendor/perfect-scrollbar/js/perfect-scrollbar.jquery.js"></script>
+<script src="vendor/lrInfiniteScroll/lrInfiniteScroll.js"></script>
+<script src="vendor/ngImgCrop/compile/minified/ng-img-crop.js"></script>
+<script src="vendor/jcarousel/dist/jquery.jcarousel.js"></script>
+<script src="vendor/angular-fcsa-number/src/fcsaNumber.min.js"></script>
+<script src="vendor/bootstrap-daterangepicker/daterangepicker.js"></script>
+<script src="vendor/angular-daterangepicker/js/angular-daterangepicker.min.js"></script>
+<script src="vendor/angular-paging/dist/paging.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/1.2.0/ui-bootstrap-tpls.js"></script>
+<!--<script src="vendor/date-time/time-picker.js"></script>-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-ui-datetime-picker/2.5.4/datetime-picker.js"></script>
+
+
+
+
+<!-- build:js scripts/app.js -->
+<!-- Main App JS -->
+<script src="app.js"></script>
+<script src="app.config.js"></script>
+<script src="app.functions.js"></script>
+<!-- Add New Component JS Above -->
+
+<script src="layouts/layouts.js"></script>
+<script src="layouts/directive/sidebarLeft/sidebarLeft.js"></script>
+<script src="layouts/directive/headerContent/headerContent.js"></script>
+<script src="layouts/directive/footerContent/footerContent.js"></script>
+
+<script src="shared/js/common/common.js"></script>
+<script src="shared/js/common/service/wrappedModalService.js"></script>
+<script src="shared/js/common/service/commonModalService.js"></script>
+
+<script src="shared/js/common/controller/popupConfirmMessageController.js"></script>
+<script src="shared/js/common/controller/popupMessageController.js"></script>
+
+<script src="shared/js/common/directive/periodpicker.js"></script>
+
+<script src="shared/js/config/config.js"></script>
+<script src="shared/js/config/authInterceptorService.js"></script>
+
+<script src="shared/js/remote/remote.js"></script>
+<script src="shared/js/remote/userRemoteService.js"></script>
+
+<!--User -->
+<script src="shared/js/user/user.js"></script>
+<script src="shared/js/user/service/userService.js"></script>
+<script src="shared/js/user/controller/loginController.js"></script>
+<script src="shared/js/user/controller/menu/dashboardController.js"></script>
+<script src="assets/admin/js/utilities.js"></script>
+
+
+<!-- endbuild -->
+</body>
+
+
+<script data-remove="false" data-concat="false">
+    setTimeout(function(){
+        var width = $(window).width();
+
+        if (width < 1280) {
+            $('#page-content').perfectScrollbar();
+        }
+    }, 2000);
+
+    $(document).ready(function () {
+        var height = $(window).height();
+        $('#sidebar-left').css('min-height', height - 50);
+        $('#listView').css('min-height', height - 50);
+        $('#sidebar-left').css('height', height - 50);
+        $('#listView').css('height', height - 50);
+
+        $('#sidebar-left').perfectScrollbar();
+
+
+        $(window).resize(function () {
+            var height = $(window).height();
+            var width = $(window).width();
+
+            $('#sidebar-left').css('min-height', height - 50);
+            $('#listView').css('min-height', height - 50);
+            $('#sidebar-left').css('height', height - 50);
+            $('#listView').css('height', height - 50);
+
+            $('#sidebar-left').perfectScrollbar();
+
+            if (width < 1280) {
+                $('#page-content').perfectScrollbar();
+            }else{
+                $('#page-content').perfectScrollbar('destroy');
+            }
+        });
+
+    });
+</script>
+</html>

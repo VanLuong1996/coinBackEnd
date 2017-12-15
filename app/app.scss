@@ -1,0 +1,100 @@
+/* Required for Angular UI Bootstrap */
+.nav, .pagination, .carousel, .panel-title a {
+    cursor: pointer;
+}
+
+/* Component SCSS */
+/* Add Component SCSS Above */
+
+//@import "assets/modal/modal.scss";
+//1
+@import "assets/admin/sass/custom.scss";
+@import "assets/admin/sass/pages/sign.scss";
+//2
+@import "assets/admin/sass/reset.scss";
+@import "assets/admin/sass/layout.scss";
+//3
+@import "assets/admin/sass/components.scss";
+//4
+@import "assets/admin/sass/plugins.scss";
+@import "assets/admin/sass/theme.scss";
+//5
+@import "assets/admin/sass/angular-custom.scss";
+@import "assets/admin/sass/style.scss";
+//
+@import "assets/own/common.scss";
+
+/* Document level adjustments */
+html {
+    font-size: 16px;
+}
+
+body {
+    font-size: 16px;
+}
+
+@media (min-width: 1600px) {
+    html {
+        font-size: 16px;
+    }
+
+    body {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 1599px) {
+    html {
+        font-size: 14px;
+    }
+
+    body {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 1280px) {
+    .btn {
+        font-size: 12px !important;
+    }
+    html{
+        font-size: 12px;
+    }
+
+    body {
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 768px) {
+    html {
+        font-size: 12px;
+    }
+
+    body {
+        font-size: 12px;
+    }
+}
+
+html {
+    overflow: hidden;
+    height: 100%;
+}
+
+body {
+    height: 100%;
+    overflow: hidden;
+}
+
+.form-inline-modal {
+    display: block;
+    width: 100%;
+    border-bottom: 1px solid #CCCCCC;
+}
+
+.img-avatar {
+    width: 70px;
+    height: 70px;
+    margin: 5px 0;
+    opacity: 0.8;
+}

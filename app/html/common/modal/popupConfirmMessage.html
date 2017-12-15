@@ -1,0 +1,18 @@
+<div class="modal-content modal-inner border-customer" id="modelDialogLoading">
+    <div class="modal-heading background-customer">
+        <button type="button" class="close" ng-click="$dismiss()" aria-label="Close"><span
+            aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" translate>Confirmation</h4>
+    </div>
+
+    <div class="modal-body">
+        <p> {{message | translate}}</p>
+    </div>
+    <div class="modal-footer text-right">
+        <button type="button" class="btn btn-default cancel-button btn-outline border-customer text-customer" ng-click="$dismiss()">
+            <span translate>Cancel</span></button>
+        <button type="button" class="btn btn-default background-customer save-button" ng-click="confirm()">
+            <span translate>OK</span>
+        </button>
+    </div>
+</div>

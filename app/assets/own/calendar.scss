@@ -1,0 +1,72 @@
+.fc .fc-event {
+    font-size: 1em;
+}
+
+.fc .fc-month-view {
+    .fc-widget-header {
+        border: none;
+
+        th {
+            border: none;
+        }
+    }
+
+    .fc-day-grid-event {
+        background-color: #67c18c;
+        border-color: #67c18c;
+    }
+
+    td.fc-today {
+        background: transparent;
+    }
+
+    .fc-day-number {
+        text-align: center;
+        font-weight: bold;
+
+        &.fc-today {
+            background-color: #EF8367;
+            color: white;
+        }
+    }
+}
+
+.fc .fc-agenda-view {
+    .fc-widget-header {
+        border: none;
+
+        th {
+            border: none;
+        }
+    }
+
+    .fc-divider.fc-widget-header {
+        display: none;
+    }
+
+    .fc-body > tr > .fc-widget-content {
+        border: none;
+    }
+
+    .fc-slats tr > td {
+        border: none;
+    }
+
+    .fc-bg .fc-widget-content {
+        border: none;
+
+        //&.fc-today {
+        //    background-color: transparent;
+        //}
+    }
+
+    .fc-slats tr.fc-minor > td.fc-widget-content {
+        border-bottom: dotted 1px #ddd;
+    }
+
+    .fc-event {
+        background-color: #67c18c;
+        border-color: darken(#67c18c, 20%);
+        color: #000;
+    }
+}

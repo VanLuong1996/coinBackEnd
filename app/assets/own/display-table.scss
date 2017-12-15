@@ -1,0 +1,182 @@
+.table-row {
+    display: table-row;
+    width: 100%;
+    margin: 0;
+}
+
+.table-cell {
+    display: table-cell;
+    vertical-align: middle;
+    height: 50px;
+    padding: 10px 5px;
+    * {
+        overflow-wrap: break-word;
+        word-wrap: break-word;
+        word-break: break-all;;
+        -moz-word-break: break-word;
+        -o-word-break: break-word;;
+    }
+
+    span {
+        word-break: break-word;
+    }
+}
+
+.table-heading {
+    width: 100%;
+    height: 45px;
+    padding: 0;
+}
+
+.table-heading .table-cell * {
+    word-break: normal;
+}
+
+.width-3 {
+    width: 3%;
+}
+
+.width-4 {
+    width: 4%;
+}
+
+.width-5 {
+    width: 5%;
+}
+
+.width-7 {
+    width: 7%;
+}
+
+.width-7-5 {
+    width: 7.5%;
+}
+
+.width-8 {
+    width: 8%;
+}
+
+.width-9 {
+    width: 9%;
+}
+
+.width-10 {
+    width: 10%;
+}
+
+.width-11 {
+    width: 11%;
+}
+
+.width-12-5 {
+    width: 12.5%;
+}
+
+.width-15 {
+    width: 15%;
+}
+
+.width-16 {
+    width: 16%;
+}
+
+.width-17 {
+    width: 17%;
+}
+
+.width-18 {
+    width: 18%;
+}
+
+.width-20 {
+    width: 20%;
+}
+
+.width-21 {
+    width: 21%;
+}
+
+.width-23 {
+    width: 23%;
+}
+
+.width-25 {
+    width: 25%;
+}
+
+.width-27 {
+    width: 27%;
+}
+
+.width-28 {
+    width: 28%;
+}
+
+.width-30 {
+    width: 30%;
+}
+
+.width-35 {
+    width: 35%;
+}
+
+.width-40 {
+    width: 40%;
+}
+
+.width-45 {
+    width: 45%;
+}
+
+.width-42 {
+    width: 42%;
+}
+
+.width-50 {
+    width: 50%;
+}
+
+.width-55 {
+    width: 55%;
+}
+
+.width-60 {
+    width: 60% !important;
+}
+
+.width-62 {
+    width: 62%;
+}
+
+.width-65 {
+    width: 65%;
+}
+
+.width-70 {
+    width: 70%;
+}
+
+.width-75 {
+    width: 75%;
+}
+
+.width-80 {
+    width: 80%;
+}
+
+.width-85 {
+    width: 85%;
+}
+
+.width-90 {
+    width: 90%;
+}
+
+.width-100 {
+    width: 100% !important;
+}
+
+// Table border collapse
+.border-collapse {
+    border-collapse : collapse;
+}
