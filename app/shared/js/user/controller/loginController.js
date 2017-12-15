@@ -32,7 +32,6 @@ angular.module('user').controller('loginController',
 
                 var opts = {
                     email: $scope.username,
-                    password: md5.createHash($scope.password),
                 };
                 // userServiceHttp.login(opts, function (success) {
                 //     switch (success.messageKey) {

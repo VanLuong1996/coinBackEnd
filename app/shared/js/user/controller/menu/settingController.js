@@ -1,4 +1,4 @@
-angular.module('user').controller('dashboardController',
+angular.module('user').controller('settingController',
     function userListController($scope, $rootScope, $state) {
 
         var token = localStorage.getItem('token');
