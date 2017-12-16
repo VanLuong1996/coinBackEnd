@@ -19,6 +19,6 @@ angular.module('gCoinApp').constant('config', {
     appVersion: 0.1,
     /*=====================Server URL===================================*/
 
-    baseURL: 'http://172.16.10.105:8099/gcoin',
+    baseURL: 'http://192.168.4.92:8080/gcoin',
 
 });
