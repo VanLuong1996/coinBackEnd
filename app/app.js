@@ -1,6 +1,7 @@
-angular.module('gCoinApp', ['ui.bootstrap', 'ui.utils', 'ui.bootstrap', 'ui.router', 'ngAnimate', 'ngImgCrop',
+angular.module('gCoinApp', ['ui.bootstrap', 'ui.utils', 'ui.router', 'ngAnimate', 'ngImgCrop',
     'toastr', 'lrInfiniteScroll', 'ngFileUpload', 'gettext', 'ui.calendar', 'tmh.dynamicLocale',
     'fcsa-number', 'daterangepicker', 'mgcrea.ngStrap','ui.bootstrap.datetimepicker','ui.select','ngSanitize','angular-md5',
+    'ngClipboard',
     'layouts', 'common', 'config', 'remote', 'user', 'bw.paging']);
 
 angular.module('gCoinApp').config(function ($stateProvider, $urlRouterProvider, $httpProvider, toastrConfig) {

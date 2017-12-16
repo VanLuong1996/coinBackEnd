@@ -1,11 +1,11 @@
-angular.module('common').factory('wrappedModalService', function ($http, $modal, $rootScope, toastr) {
+angular.module('common').factory('wrappedModalService', function ($http, $uibModal, $rootScope, toastr) {
 
     return {
         openModal: function (opts, callbackClose, callbackDismiss) {
             var showOverlayOnSuccess = opts['showOverlayOnSuccess'];
             var successMessage = opts['successMessage'] || 'Thành công';
             //showLoading();
-            var modal = $modal.open({
+            var modal = $uibModal.open({
                 templateUrl: opts.templateUrl,
                 controller: opts.controller,
                 size: opts.size,

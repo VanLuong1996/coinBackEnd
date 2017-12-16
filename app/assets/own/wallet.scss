@@ -11,3 +11,19 @@
 .btn-accent:hover {
     color: white !important;
 }
+
+.btn-deposit {
+    height: 40px;
+    border-radius: 20px !important;
+    background-color: $color-theme;
+    font-size: 140% !important;
+}
+
+.copy-btn {
+    background-color: lightgray;
+    color: $color-theme;
+}
+
+.close-btn {
+    border-radius: 5px !important;
+}

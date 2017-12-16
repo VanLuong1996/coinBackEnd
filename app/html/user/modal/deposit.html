@@ -1,0 +1,25 @@
+<div class="modal-content modal-innerid">
+    <div class="modal-heading wallet-block">
+        <button type="button" class="close" ng-click="$dismiss()" aria-label="Close"><span
+            aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title text-center" translate>Your GEMC Address</h4>
+    </div>
+    <div class="modal-body">
+        <div class="row">
+            <div class="col-sm-12" style="padding: 0 !important;">
+                <div class="input-group">
+                    <input type="text" class="form-control" ng-model="address">
+                    <span class="input-group-btn copy-btn">
+                        <button class="btn btn-secondary" type="button" style="color: dodgerblue" ng-click="copy()">Copy</button>
+                    </span>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default close-btn btn-outline" ng-click="$dismiss()">
+            <span translate>Close</span>
+        </button>
+    </div>
+</div>
