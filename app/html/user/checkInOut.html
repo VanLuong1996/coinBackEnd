@@ -1,57 +1,71 @@
 <div class="main-content">
     <div class="main-content-left table" style="display: table;">
         <div id="content-list-wrapper">
-            <h2>CheckInOut</h2>
-            <div class="main-content-left  table margin-top-10" style="display: table">
-        <div class="container">
-            <div style="padding-left: 480px;padding-top: 50px;padding-bottom: 50px">
-            <input type="button" style="width: 200px;height:50px; position:relative;text-align: center" class="btn-primary" value="CheckIn">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="pull-left">
+                        <i class="pe page-header-icon pe-7s-graph3 header-icon-45"></i>
+                    </div>
+                    <div class="pull-left">
+                        <h3 class="m-b-xs">CHECK IN OUT</h3>
+                    </div>
+                </div>
             </div>
-            <table class="table table-hover table-responsive ">
-                <thead>
-                <tr>
-                    <th>Name</th>
-                    <th>CheckInTime</th>
-                    <th>CheckOutTime</th>
-                    <th>Date</th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr class="info">
-                    <td>John Join</td>
-                    <td>8:30 Am</td>
-                    <td>8:30 Pm</td>
-                    <td>30-12-2011 </td>
-                </tr>
-                <tr class="info">
-                    <td>John Join</td>
-                    <td>8:30 Am</td>
-                    <td>8:30 Pm</td>
-                    <td>30-12-2011 </td>
-                </tr>
-                <tr class="info">
-                    <td>John Join</td>
-                    <td>8:30 Am</td>
-                    <td>8:30 Pm</td>
-                    <td>30-12-2011 </td>
-                </tr>      <tr class="info">
-                    <td>John Join</td>
-                    <td>8:30 Am</td>
-                    <td>8:30 Pm</td>
-                    <td>30-12-2011 </td>
-                </tr>
+            <div class="row">
+                <div class="col-sm-12 border-1 p-v-10 coin-log-block">
+                    <div class="row margin-0 p-h-10">
+                        <div style="padding-top: 50px;padding-bottom: 50px;padding-left: 700px">
+                            <input type="button" style="width: 250px;height: 50px" value="Check In" class="btn btn-warning">
+                        </div>
+                        <table width="100%" style="line-height: 2" class="table table-striped">
+                            <thead class="m-b-10">
+                            <tr>
+                                <td width="25%" class="table-header-label">Name</td>
+                                <td width="25%" class="table-header-label">Check In Time</td>
+                                <td width="25%" class="table-header-label">Check Out Time</td>
+                                <td width="25%" class="table-header-label">Date</td>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td width="25%">QuangDn</td>
+                                <td width="25%"><i class="fa fa-check text-info">8h30 Am</i>
+                                <td width="25%"><i class="fa fa-caret-right text-danger"></i>8h30 Pm</td>
+                                <td width="25%">30/12/2017</td>
+                            </tr>
+                            <tr>
+                                <td width="25%">QuangDn</td>
+                                <td width="25%"><i class="fa fa-check text-info">8h30 Am</i>
+                                <td width="25%"><i class="fa fa-caret-right text-danger"></i>8h30 Pm</td>
+                                <td width="25%">30/12/2017</td>
+                            </tr> <tr>
+                                <td width="25%">QuangDn</td>
+                                <td width="25%"><i class="fa fa-check text-info">8h30 Am</i>
+                                <td width="25%"><i class="fa fa-caret-right text-danger"></i>8h30 Pm</td>
+                                <td width="25%">30/12/2017</td>
+                            </tr>
+                            <tr>
+                                <td width="25%">QuangDn</td>
+                                <td width="25%"><i class="fa fa-check text-info">8h30 Am</i>
+                                <td width="25%"><i class="fa fa-caret-right text-danger"></i>8h30 Pm</td>
+                                <td width="25%">30/12/2017</td>
+                            </tr> <tr>
+                                <td width="25%">QuangDn</td>
+                                <td width="25%"><i class="fa fa-check text-info">8h30 Am</i>
+                                <td width="25%"><i class="fa fa-caret-right text-danger"></i>8h30 Pm</td>
+                                <td width="25%">30/12/2017</td>
+                            </tr>
 
 
-                </tbody>
-            </table>
-        </div>
-    </div>
 
-
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>
-
 
 <script data-remove="false" data-concat="false">
 
@@ -65,7 +79,6 @@
                 if ($ele.length === 0) return;
                 $ele.css({
                     height: height - $ele.offset().top,
-//                    height: height - 100,
                     position: 'relative',
                     'overflow-y': 'hidden'
                 });
@@ -75,6 +88,8 @@
             fullHeightScroll($('#content-list-wrapper'));
 
         });
+
+        $('.coin-log-block').css({height: $(window).height() - $('.coin-log-block').offset().top - 20})
     };
 
     var initScroll = function ($ele) {
