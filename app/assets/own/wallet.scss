@@ -2,3 +2,12 @@
     background: $color-theme;
     color: white
 }
+
+.btn-accent {
+    border-color: #FF4508 !important;
+    color: lightsalmon;
+}
+
+.btn-accent:hover {
+    color: white !important;
+}
