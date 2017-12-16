@@ -29,7 +29,7 @@ angular.module('user').controller('walletController',
             }
 
             userRemoteService.transferCoin({
-                address: $scope.transferObject.amount,
+                addressReceive: $scope.transferObject.address,
                 totalCoin : $scope.transferObject.amount
             }, function (data) {
 
