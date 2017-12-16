@@ -1,5 +1,5 @@
 angular.module('user').controller('buyServiceController',
-    function userListController($scope, $rootScope, $state, opts, servicesRemoteService) {
+    function userListController($scope, $rootScope, $state, opts, $uibModalInstance, servicesRemoteService) {
 
         $scope.service = opts.service;
         $scope.buy = {
@@ -14,13 +14,14 @@ angular.module('user').controller('buyServiceController',
             };
             // console.log(opts);
             servicesRemoteService.buyService(opts, function (data) {
-
+                $uibModalInstance.close()
             }, function (data) {
+                $uibModalInstance.dismiss()
             })
         }
 
 
 
-        //OK : $modalInstance.close()
-        //OK : $modalInstance.dismiss()
+        //OK : $uibModalInstance.close()
+        //Cancel : $modalInstance.dismiss()
     });

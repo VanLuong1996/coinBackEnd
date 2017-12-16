@@ -1,5 +1,5 @@
 angular.module('user').controller('servicesController',
-    function ($scope, $rootScope, $state, $http, servicesRemoteService, userModalService) {
+    function ($scope, $rootScope, $state, $http, $timeout, servicesRemoteService, userModalService) {
         $scope.serviceList = [];
 
         servicesRemoteService.getAllService(function (data) {
@@ -10,7 +10,11 @@ angular.module('user').controller('servicesController',
         });
 
         $scope.buy = function (service) {
-            userModalService.openBuyService({service : service});
+            userModalService.openBuyService({service : service}, function () {
+                $timeout(function () {
+                    alert("Successful");
+                }, 500);
+            });
         }
 
     });
