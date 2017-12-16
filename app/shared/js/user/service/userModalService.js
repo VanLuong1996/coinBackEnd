@@ -11,6 +11,17 @@ angular.module('user').factory('userModalService', function ($http, wrappedModal
                 }
             });
         },
+        openBuyService: function (opts) {
+            wrappedModalService.openModal({
+                templateUrl: 'html/user/modal/buyService.html',
+                controller: 'buyServiceController',
+                resolve: {
+                    opts: function () {
+                        return opts;
+                    }
+                }
+            });
+        },
 
 
 

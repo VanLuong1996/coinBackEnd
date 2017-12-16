@@ -22,8 +22,7 @@
                                     <span class="text-warning text-bold"
                                           style="font-size: 130%">GCoin: {{service.price}}</span><br> </p>
                                 <h4>{{service.name}}</h4>
-
-                            <a href="#" class="btn btn-lg btn-primary">Launch Demo Modal</a>
+                            <button type="button" class="btn btn-lg btn-primary" ng-click="buy(service)" style="border-radius: 5px">Buy Ticket</button>
                         </div>
                     </div>
                 </div><!--features_items-->
@@ -99,9 +98,6 @@
 
                     var height = $(window).height();
                     $('body').css('height', height);
-                });
-                $(".btn").click(function(){
-                    $("#myModal").modal('show');
                 });
             });
         </script>

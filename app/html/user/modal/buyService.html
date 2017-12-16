@@ -1,0 +1,28 @@
+<div class="modal-content modal-innerid">
+    <div class="modal-heading wallet-block">
+        <button type="button" class="close" ng-click="$dismiss()" aria-label="Close"><span
+            aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title text-center" translate>Buy service</h4>
+    </div>
+    <div class="modal-body">
+        <div class="row" style="padding-top: 10px">
+            <div class="col-sm-4">
+                {{service.name}}
+            </div>
+            <div class="col-sm-4">
+                <input type="number" placeholder="Amount" ng-model="buy.amount">
+            </div>
+            <div class="col-sm-4">
+                {{buy.amount * service.price}}
+            </div>
+        </div>
+    </div>
+    <div class="modal-footer" style="background: white">
+        <button type="button" class="btn btn-primary close-btn btn-outline text-white"  ng-click="buyService()">
+            <span translate>Xác nhận</span>
+        </button>
+        <button type="button" class="btn btn-default close-btn btn-outline" ng-click="$dismiss()">
+            <span translate>Close</span>
+        </button>
+    </div>
+</div>

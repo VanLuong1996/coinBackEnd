@@ -1,5 +1,5 @@
 angular.module('user').controller('servicesController',
-    function ($scope, $rootScope, $state, $http, servicesRemoteService) {
+    function ($scope, $rootScope, $state, $http, servicesRemoteService, userModalService) {
         $scope.serviceList = [];
 
         servicesRemoteService.getAllService(function (data) {
@@ -8,5 +8,9 @@ angular.module('user').controller('servicesController',
         }, function (data) {
             console.log(data);
         });
+
+        $scope.buy = function (service) {
+            userModalService.openBuyService({service : service});
+        }
 
     });
