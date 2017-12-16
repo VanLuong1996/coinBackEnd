@@ -10,8 +10,8 @@ angular.module('user').controller('servicesController',
         });
 
         servicesRemoteService.getListTransaction(function (data) {
-            $scope.serviceList = data.result;
-            console.log($scope.serviceList);
+            $scope.transactionList = data.result;
+            console.log($scope.transactionList);
         }, function (data) {
             console.log(data);
         });
