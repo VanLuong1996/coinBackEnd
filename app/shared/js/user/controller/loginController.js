@@ -27,7 +27,7 @@ angular.module('user').controller('loginController',
 
             if ($scope.loginForm.$valid) {
                 // for dev
-                $state.transitionTo("dashboard");
+                $state.transitionTo("wallet");
                 // return;
 
                 var opts = {

@@ -25,9 +25,10 @@ $color-theme-ajax         : #6880B0; // theme color for AJAX version
 $color-theme-php          : #5a67a5; // theme color for PHP version
 $color-theme-codeigniter  : #DD4814; // theme color for Codeigniter version
 $color-theme-material     : #2196F3; // theme color for Material design version
+$color-theme-gem          : #4160A3; // theme color for GEM
 
 // SET THEME
-$color-theme              : $color-theme-html;
+$color-theme              : $color-theme-gem;
 
 // BASED COLOR (10 COLORS) --------------------------------------
 $gray                     : #EEEEEE;

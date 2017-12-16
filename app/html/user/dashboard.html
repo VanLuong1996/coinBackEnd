@@ -12,17 +12,7 @@
     <div class="col-lg-5 col-sm-5 col-md-5  main-right" ui-view="detail" ng-if="$state.includes('users.detail')"></div>
 </div>
 <script data-remove="false" data-concat="false">
-    function showDetail(id) {
-//$('.customer-list').css('background-color', '');
-//$('#' + id).css('background-color', '#dddddd');
-        var campaignElement = $('.customer-list');
-        campaignElement.each(function() {
-            if($(this).hasClass('background-selected')) {
-                $(this).removeClass('background-selected');
-            }
-        });
-        $('#' + id).addClass('background-selected');
-    }
+
     var setHeightTimeout;
     var calculateLayoutList = function () {
         if (setHeightTimeout) window.clearTimeout(setHeightTimeout);
