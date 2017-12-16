@@ -1,7 +1,16 @@
 angular.module('user').controller('checkInOutController',
-    function userListController($scope, $rootScope, $state) {
+    function userListController($scope, $rootScope, $state, userRemoteService) {
 
-        var token = localStorage.getItem('token');
+        var user = angular.fromJson(sessionStorage.getItem('user'));
+
+        $scope.checkInOut = function () {
+            userRemoteService.checkInOut(user.id, function (data) {
+
+            }, function (data) {
+
+            });
+
+        }
 
 
     });
