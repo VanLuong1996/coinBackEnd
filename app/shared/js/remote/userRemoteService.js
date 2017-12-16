@@ -61,6 +61,18 @@ angular.module('remote').factory('userRemoteService', function ($http, config) {
             });
         },
 
+        transferCoin: function (opts, successCallback, failureCallback) {
+            return $http({
+                url: config.baseURL + '/user/transferCoin',
+                method: 'POST',
+                data: opts
+            }).success(function (data, status, headers, config) {
+                successCallback(data);
+            }).error(function (data, status, headers, config) {
+                failureCallback(data, status, headers, config);
+            });
+        },
+
 
         checkInOut: function (successCallback, failureCallback) {
             return $http({

@@ -54,21 +54,21 @@
                     </div>
                     <div class="row margin-0 p-h-10 p-b-30 wallet-block">
                         <label>To Address</label>
-                        <input type="text" class="form-control" ng-model="address">
+                        <input type="text" class="form-control" ng-model="transferObject.address">
                     </div>
                     <div class="row margin-0 p-h-10 p-b-30 wallet-block">
                         <label>Amount</label>
                         <div class="input-group">
-                            <input type="text" class="form-control" aria-label="Amount">
+                            <input type="number" class="form-control" ng-model="transferObject.amount">
                             <span class="input-group-addon">.00</span>
                         </div>
                     </div>
                     <div class="row margin-0 p-h-10 p-b-30 wallet-block">
                         <label>Password</label>
-                        <input type="password" class="form-control" ng-model="password">
+                        <input type="password" class="form-control" ng-model="transferObject.password">
                     </div>
                     <div class="row margin-0 p-h-10 p-b-30 wallet-block">
-                        <button type="submit" class="btn btn-accent">Withdraw from GEMC wallet</button>
+                        <button type="submit" class="btn btn-accent" ng-click="transferGEMC()">Withdraw from GEMC wallet</button>
                     </div>
                 </div>
 

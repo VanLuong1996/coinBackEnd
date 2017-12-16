@@ -1,12 +1,15 @@
 angular.module('user').controller('walletController',
     function userListController($scope, $rootScope, $state, userModalService, userRemoteService) {
 
-        var token = localStorage.getItem('token');
+        $scope.transferObject = {
+            address : ''
+        };
 
         $scope.user = {
-            numberCoin : 0,
-            priceCoin : 0
+            numberCoin: 0,
+            priceCoin: 0
         };
+
 
         userRemoteService.getUserCoin(function (data) {
             $scope.user = data;
@@ -18,6 +21,22 @@ angular.module('user').controller('walletController',
         $scope.openDepositModal = function () {
             userModalService.openDepositModal({address: $scope.user.address});
         };
+
+        $scope.transferGEMC = function () {
+            if ($scope.transferObject.amount > $scope.user.numberCoin) {
+                alert("You don't have enough coin to transfer");
+                return;
+            }
+
+            userRemoteService.transferCoin({
+                address: $scope.transferObject.amount,
+                totalCoin : $scope.transferObject.amount
+            }, function (data) {
+
+            }, function (data) {
+
+            })
+        }
 
 
     });
