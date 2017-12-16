@@ -16,14 +16,27 @@ angular.module('remote').factory('userRemoteService', function ($http, config) {
             });
         },
 
-        getUserCoin: function (id, successCallback, failureCallback) {
+
+        changePassword: function (opts, successCallback, failureCallback) {
             return $http({
-                url: config.baseURL + '/user/infor/' + 1,
+                url: config.baseURL + '/auth/change-password',
                 method: 'POST',
                 data: {
-                    username: opts.username,
-                    password: opts.password
+                    newPassword: opts.newPassword,
+                    oldPassword: opts.oldPassword
                 }
+            }).success(function (data, status, headers, config) {
+                successCallback(data);
+            }).error(function (data, status, headers, config) {
+                failureCallback(data, status, headers, config);
+            });
+        },
+
+        getUserCoin: function (successCallback, failureCallback) {
+            return $http({
+                url: config.baseURL + '/user/getCoins',
+                method: 'POST',
+                data: ''
             }).success(function (data, status, headers, config) {
                 successCallback(data);
             }).error(function (data, status, headers, config) {
