@@ -1,9 +1,6 @@
 <div class="main-content">
-    <div
-        ng-class="$state.includes('users.detail')?'col-lg-7 col-sm-7 col-md-7 main-left':'col-lg-12 col-sm-12 col-md-12 main-left full-width'">
-        <div class="header-content">
-            <h2>Setting</h2>
-        </div>
+    <div class="main-content-left table" style="display: table;">
+        <div id="content-list-wrapper">
             <form class="row form-horizontal" style="padding-top: 80px">
                 <h3 style="padding-left: 135px;padding-bottom: 20px">Information</h3>
                 <div class="form-group">
@@ -56,8 +53,8 @@
                 </div>
 
             </form>
+        </div>
     </div>
-    <div class="col-lg-5 col-sm-5 col-md-5  main-right" ui-view="detail" ng-if="$state.includes('users.detail')"></div>
 </div>
 <script data-remove="false" data-concat="false">
 
@@ -71,6 +68,7 @@
                 if ($ele.length === 0) return;
                 $ele.css({
                     height: height - $ele.offset().top,
+//                    height: height - 100,
                     position: 'relative',
                     'overflow-y': 'hidden'
                 });
@@ -103,19 +101,4 @@
         });
 
     });
-</script>
-<script type="text/ng-template" id="confirm_delete_modal.html">
-    <div modal-movable>
-        <div class="modal-header">
-            <button type="button" class="close" ng-click="$dismiss()" aria-hidden="true"></button>
-            <h4 class="modal-title"><i class="icon-question"></i> Xoá bản ghi</h4>
-        </div>
-        <div class="modal-body">
-            <p>Bạn có muốn xoá các bản ghi đã chọn không?</p>
-        </div>
-        <div class="modal-footer">
-            <button type="button" ng-click="$dismiss()" class="btn btn-default" data-dismiss="modal">Không</button>
-            <button type="button" ng-click="$close('yes')" class="btn btn-primary" data-dismiss="modal">Có</button>
-        </div>
-    </div>
 </script>

@@ -1,9 +1,8 @@
 <div class="main-content">
-    <div  ng-class="$state.includes('users.detail')?'col-lg-7 col-sm-7 col-md-7 main-left':'col-lg-12 col-sm-12 col-md-12 main-left full-width'" >
-    <div class="header-content">
-        <h2>CheckInOut</h2>
-    </div>
-    <div class="main-content-left  table margin-top-10" style="display: table">
+    <div class="main-content-left table" style="display: table;">
+        <div id="content-list-wrapper">
+            <h2>CheckInOut</h2>
+            <div class="main-content-left  table margin-top-10" style="display: table">
         <div class="container">
             <div style="padding-left: 480px;padding-top: 50px;padding-bottom: 50px">
             <input type="button" style="width: 200px;height: 200px; position:relative;text-align: center" class="btn-primary" value="CheckIn">
@@ -11,215 +10,49 @@
             <table class="table table-hover table-responsive ">
                 <thead>
                 <tr>
-                    <th>Firstname</th>
-                    <th>Lastname</th>
-                    <th>Email</th>
+                    <th>Name</th>
+                    <th>CheckInTime</th>
+                    <th>CheckOutTime</th>
+                    <th>Date</th>
                 </tr>
                 </thead>
                 <tbody>
                 <tr class="info">
-                    <td>John</td>
-                    <td>Doe</td>
-                    <td>john@example.com</td>
-                </tr>
-                <tr class="warning">
-                    <td>Mary</td>
-                    <td>Moe</td>
-                    <td>mary@example.com</td>
-                </tr>
-                <tr>
-                    <td>July</td>
-                    <td>Dooley</td>
-                    <td>july@example.com</td>
+                    <td>John Join</td>
+                    <td>8:30 Am</td>
+                    <td>8:30 Pm</td>
+                    <td>30-12-2011 </td>
                 </tr>
                 <tr class="info">
-                    <td>John</td>
-                    <td>Doe</td>
-                    <td>john@example.com</td>
-                </tr>
-                <tr class="warning">
-                    <td>Mary</td>
-                    <td>Moe</td>
-                    <td>mary@example.com</td>
-                </tr>
-                <tr>
-                    <td>July</td>
-                    <td>Dooley</td>
-                    <td>july@example.com</td>
+                    <td>John Join</td>
+                    <td>8:30 Am</td>
+                    <td>8:30 Pm</td>
+                    <td>30-12-2011 </td>
                 </tr>
                 <tr class="info">
-                    <td>John</td>
-                    <td>Doe</td>
-                    <td>john@example.com</td>
+                    <td>John Join</td>
+                    <td>8:30 Am</td>
+                    <td>8:30 Pm</td>
+                    <td>30-12-2011 </td>
+                </tr>      <tr class="info">
+                    <td>John Join</td>
+                    <td>8:30 Am</td>
+                    <td>8:30 Pm</td>
+                    <td>30-12-2011 </td>
                 </tr>
-                <tr class="warning">
-                    <td>Mary</td>
-                    <td>Moe</td>
-                    <td>mary@example.com</td>
-                </tr>
-                <tr>
-                    <td>July</td>
-                    <td>Dooley</td>
-                    <td>july@example.com</td>
-                </tr>
-                <tr class="info">
-                    <td>John</td>
-                    <td>Doe</td>
-                    <td>john@example.com</td>
-                </tr>
-                <tr class="warning">
-                    <td>Mary</td>
-                    <td>Moe</td>
-                    <td>mary@example.com</td>
-                </tr>
-                <tr>
-                    <td>July</td>
-                    <td>Dooley</td>
-                    <td>july@example.com</td>
-                </tr>
-                <tr class="info">
-                    <td>John</td>
-                    <td>Doe</td>
-                    <td>john@example.com</td>
-                </tr>
-                <tr class="warning">
-                    <td>Mary</td>
-                    <td>Moe</td>
-                    <td>mary@example.com</td>
-                </tr>
-                <tr>
-                    <td>July</td>
-                    <td>Dooley</td>
-                    <td>july@example.com</td>
-                </tr>
-                <tr class="info">
-                    <td>John</td>
-                    <td>Doe</td>
-                    <td>john@example.com</td>
-                </tr>
-                <tr class="warning">
-                    <td>Mary</td>
-                    <td>Moe</td>
-                    <td>mary@example.com</td>
-                </tr>
-                <tr>
-                    <td>July</td>
-                    <td>Dooley</td>
-                    <td>july@example.com</td>
-                </tr>    <tr class="info">
-                    <td>John</td>
-                    <td>Doe</td>
-                    <td>john@example.com</td>
-                </tr>
-                <tr class="warning">
-                    <td>Mary</td>
-                    <td>Moe</td>
-                    <td>mary@example.com</td>
-                </tr>
-                <tr>
-                    <td>July</td>
-                    <td>Dooley</td>
-                    <td>july@example.com</td>
-                </tr>
-                <tr class="info">
-                    <td>John</td>
-                    <td>Doe</td>
-                    <td>john@example.com</td>
-                </tr>
-                <tr class="warning">
-                    <td>Mary</td>
-                    <td>Moe</td>
-                    <td>mary@example.com</td>
-                </tr>
-                <tr>
-                    <td>July</td>
-                    <td>Dooley</td>
-                    <td>july@example.com</td>
-                </tr>
-                <tr class="info">
-                    <td>John</td>
-                    <td>Doe</td>
-                    <td>john@example.com</td>
-                </tr>
-                <tr class="warning">
-                    <td>Mary</td>
-                    <td>Moe</td>
-                    <td>mary@example.com</td>
-                </tr>
-                <tr>
-                    <td>July</td>
-                    <td>Dooley</td>
-                    <td>july@example.com</td>
-                </tr>
-                <tr class="info">
-                    <td>John</td>
-                    <td>Doe</td>
-                    <td>john@example.com</td>
-                </tr>
-                <tr class="warning">
-                    <td>Mary</td>
-                    <td>Moe</td>
-                    <td>mary@example.com</td>
-                </tr>
-                <tr>
-                    <td>July</td>
-                    <td>Dooley</td>
-                    <td>july@example.com</td>
-                </tr>
+
+
                 </tbody>
             </table>
         </div>
     </div>
 
 
+        </div>
+    </div>
 </div>
-    <div class="col-lg-5 col-sm-5 col-md-5  main-right" ui-view="detail" ng-if="$state.includes('users.detail')"></div>
-</div>
-<script data-remove="false" data-concat="false">
-
-    var setHeightTimeout;
-    var calculateLayoutList = function () {
-        if (setHeightTimeout) window.clearTimeout(setHeightTimeout);
-
-        setHeightTimeout = setTimeout(function () {
-            var height = $(window).height();
-            var fullHeightScroll = function ($ele) {
-                if ($ele.length === 0) return;
-                $ele.css({
-                    height: height - $ele.offset().top,
-                    position: 'relative',
-                    'overflow-y': 'hidden'
-                });
-                $ele.perfectScrollbar('update');
-            };
-
-            fullHeightScroll($('#content-list-wrapper'));
-
-        });
-    };
-
-    var initScroll = function ($ele) {
-        $ele.perfectScrollbar();
-    };
-
-    initScroll($('#content-list-wrapper'));
-    initScroll($('#main-content'));
-    initScroll($('.scrollingDiv'));
 
 
-    calculateLayoutList();
-
-
-    $(document).ready(function () {
-        $(window).on('resize', function () {
-            calculateLayoutList();
-
-            var height = $(window).height();
-            $('body').css('height', height);
-        });
-
-    });
-</script>
 <script data-remove="false" data-concat="false">
 
     var setHeightTimeout;
