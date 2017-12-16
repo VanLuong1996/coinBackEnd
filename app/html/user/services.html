@@ -11,7 +11,8 @@
                     </div>
                 </div>
             </div>
-        <div class="row padding-right" style="padding-top: 50px ;padding-bottom: 40px">
+            <div class="coin-log-block">
+        <div class="row padding-right" style="padding-top: 35px ;padding-bottom: 35px">
             <div class="col-sm-4" ng-repeat="service in serviceList">
                 <div class="product-image-wrapper">
                     <div class="single-products">
@@ -20,9 +21,9 @@
                                  src="/assets/global/img/servicesImg/enu-1-oz-Gold-Canadian-Maple-Leaf-Coin-9999-3110-20000-2.jpg" alt=""/>
                             <p class="p-t-10">
                                     <span class="text-warning text-bold"
-                                          style="font-size: 130%">GCoin: {{service.price}}</span><br> </p>
-                                <h4>{{service.name}}</h4>
-                            <button type="button" class="btn btn-lg btn-primary" ng-click="buy(service)" style="border-radius: 5px">Buy Ticket</button>
+                                          style="font-size: 130%;padding-bottom: 3px">GCoin: {{service.price}}</span><br> </p>
+                                <h3 style="color:white">{{service.name}}</h3>
+                            <button type="button" class="btn btn-lg btn-warning" ng-click="buy(service)" style="border-radius: 5px">Buy Ticket</button>
                         </div>
                     </div>
                 </div><!--features_items-->
@@ -103,4 +104,6 @@
         </script>
         </div>
 </div>
+</div>
+
 </div>

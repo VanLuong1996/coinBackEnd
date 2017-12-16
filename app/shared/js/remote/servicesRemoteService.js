@@ -19,10 +19,11 @@ angular.module('remote').factory('servicesRemoteService', function ($http, confi
                 method: 'POST',
                 data: {
                     id:opts.id,
-                    name:opts.amount
+                    total:opts.amount
                 }
             }).success(function (data, status, headers, config) {
                 successCallback(data);
+
             }).error(function (data, status, headers, config) {
                 failureCallback(data, status, headers, config);
             });
