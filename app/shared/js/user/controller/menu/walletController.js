@@ -13,6 +13,7 @@ angular.module('user').controller('walletController',
             };
             userRemoteService.getUserCoin(function (data) {
                 $scope.user = data;
+                $rootScope.priceCoin = $scope.user.priceCoin;
                 console.log($scope.user);
             }, function (data) {
 
