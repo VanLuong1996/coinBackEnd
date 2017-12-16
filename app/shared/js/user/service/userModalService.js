@@ -10,6 +10,9 @@ angular.module('user').factory('userModalService', function ($http, wrappedModal
                     }
                 }
             });
-        }
+        },
+
+
+
     }
 });
