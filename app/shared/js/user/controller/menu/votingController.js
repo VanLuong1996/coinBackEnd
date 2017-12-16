@@ -3,5 +3,10 @@ angular.module('user').controller('votingController',
 
         var token = localStorage.getItem('token');
 
+        $scope.vote = function () {
+
+        };
+
+
 
     });
