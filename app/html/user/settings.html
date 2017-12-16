@@ -1,14 +1,66 @@
 <div class="main-content">
-    <div  ng-class="$state.includes('users.detail')?'col-lg-7 col-sm-7 col-md-7 main-left':'col-lg-12 col-sm-12 col-md-12 main-left full-width'" >
-    <div class="header-content">
-        <h2>Setting</h2>
-    </div>
-        <div class="row">
-            <!-- column -->
+    <div
+        ng-class="$state.includes('users.detail')?'col-lg-7 col-sm-7 col-md-7 main-left':'col-lg-12 col-sm-12 col-md-12 main-left full-width'">
+        <div class="header-content">
+            <h2>Setting</h2>
         </div>
 
+            <form class="form-horizontal" style="padding-top: 80px">
+                <h3 style="padding-left: 135px;padding-bottom: 20px">Information</h3>
+                <div class="form-group">
+                    <label for="input" class="col-md-2 control-label">Mails</label>
+                    <div class="col-sm-10" style="padding-left: 50px">
+                        <input type="text" class="form-control" id="input"
+                               placeholder="Your mails">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="input1" class="col-md-2 control-label">Country</label>
+                    <div class="col-sm-10" style="padding-left: 50px">
+                        <input type="text" class="form-control" id="input1"
+                               placeholder="YoursCountry">
+                    </div>
+                </div>
+            </form>
+            <form class="form-horizontal" style="padding-top: 80px">
+                <h3 style="padding-left: 135px;padding-bottom: 20px">Change Password</h3>
+                <div class="form-group">
+                    <label for="inputEmail" class="col-md-2 control-label">Your'sEmail</label>
+                    <div class="col-sm-10" style="padding-left: 50px">
+                        <input type="email" class="form-control" id="inputEmail"
+                               placeholder="Please Enter Yours'sEmail">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="inputPassword2" class="col-md-2 control-label">OldPassWord</label>
+                    <div class="col-sm-10" style="padding-left: 50px">
+                        <input type="password" class="form-control" id="inputPassword2"
+                               placeholder="Please Enter Yours' OldPassword">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="inputPassword3" class="col-md-2 control-label">NewPassword</label>
+                    <div class="col-sm-10" style="padding-left: 50px">
+                        <input type="password" class="form-control" id="inputPassword3"
+                               placeholder="Please Enter Yours'NewPassword">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="inputPassword4" class="col-md-2 control-label">ReNewPassword</label>
+                    <div class="col-sm-10" style="padding-left: 50px">
+                        <input type="password" class="form-control" id="inputPassword4"
+                               placeholder="Please ReEnter Yours'NewPassword">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-offset-3 col-sm-10">
+                        <button type="submit" class="btn btn-primary">Confirm</button>
+                    </div>
+                </div>
 
-</div>
+            </form>
+
+    </div>
     <div class="col-lg-5 col-sm-5 col-md-5  main-right" ui-view="detail" ng-if="$state.includes('users.detail')"></div>
 </div>
 <script data-remove="false" data-concat="false">
@@ -73,68 +125,68 @@
 </script>
 
 <!--<script type="text/ng-template" id="editPopup.html">-->
-    <!--<div modal-movable>-->
-        <!--<div class="modal-header">-->
-            <!--<button type="button" class="close" ng-click="$dismiss()" aria-hidden="true"></button>-->
-            <!--<h4 class="modal-title"><i class="icon-plus"></i> {{title}}</h4>-->
-        <!--</div>-->
-        <!--<form name="region" data-ng-submit="region.$valid && vm.saveRegion()" novalidate="">-->
-            <!--<div class="modal-body">-->
-                <!--<div class="row">-->
+<!--<div modal-movable>-->
+<!--<div class="modal-header">-->
+<!--<button type="button" class="close" ng-click="$dismiss()" aria-hidden="true"></button>-->
+<!--<h4 class="modal-title"><i class="icon-plus"></i> {{title}}</h4>-->
+<!--</div>-->
+<!--<form name="region" data-ng-submit="region.$valid && vm.saveRegion()" novalidate="">-->
+<!--<div class="modal-body">-->
+<!--<div class="row">-->
 
-                    <!--<div class="col-lg-4 col-sm-4 col-xs-12 margin-top-10" ng-class="{ 'has-error' : region.code.$invalid && !region.code.$pristine }">-->
-                        <!--<label>ID nhân viên<span class="validate">(*)</span></label>-->
-                        <!--<input name="code" required="" type="text" class="form-control textTransform" ng-modelegionCode">-->
-                        <!--<span ng-show="region.$submitted">-->
-               <!--<p ng-show="region.code.$error.required " class="validate">-->
-                   <!--Vui lòng điền vào trường này.-->
-               <!--</p></span>-->
-                        <!--<span ng-show="cmd == 'true'">-->
-                <!--<p class="validate"> Mã nhân viên đã tồn tại</p>-->
+<!--<div class="col-lg-4 col-sm-4 col-xs-12 margin-top-10" ng-class="{ 'has-error' : region.code.$invalid && !region.code.$pristine }">-->
+<!--<label>ID nhân viên<span class="validate">(*)</span></label>-->
+<!--<input name="code" required="" type="text" class="form-control textTransform" ng-modelegionCode">-->
+<!--<span ng-show="region.$submitted">-->
+<!--<p ng-show="region.code.$error.required " class="validate">-->
+<!--Vui lòng điền vào trường này.-->
+<!--</p></span>-->
+<!--<span ng-show="cmd == 'true'">-->
+<!--<p class="validate"> Mã nhân viên đã tồn tại</p>-->
 
-               <!--</span>-->
-                    <!--</div>-->
-                    <!--<div class="col-lg-4 col-sm-4 col-xs-12 margin-top-10" ng-class="{ 'has-error' : region.name.$invalid && !region.name.$pristine }">-->
-                        <!--<label>Tên nhân viên <span class="validate">(*)</span></label>-->
-                        <!--<input name="name" required="" type="text" class="form-control" ng-model="RegionName">-->
-                        <!--<span ng-show="region.$submitted">-->
-               <!--<p ng-show="region.name.$error.required " class="validate">-->
-                   <!--Vui lòng điền vào trường này.-->
-               <!--</p></span>-->
-                    <!--</div>-->
-                    <!--<div class="col-lg-4 col-sm-4 col-xs-12 margin-top-10">-->
-                        <!--<label>Email</label>-->
-                        <!--<input type="email" class="form-control" data-ng-model="sd">-->
-                    <!--</div>-->
+<!--</span>-->
+<!--</div>-->
+<!--<div class="col-lg-4 col-sm-4 col-xs-12 margin-top-10" ng-class="{ 'has-error' : region.name.$invalid && !region.name.$pristine }">-->
+<!--<label>Tên nhân viên <span class="validate">(*)</span></label>-->
+<!--<input name="name" required="" type="text" class="form-control" ng-model="RegionName">-->
+<!--<span ng-show="region.$submitted">-->
+<!--<p ng-show="region.name.$error.required " class="validate">-->
+<!--Vui lòng điền vào trường này.-->
+<!--</p></span>-->
+<!--</div>-->
+<!--<div class="col-lg-4 col-sm-4 col-xs-12 margin-top-10">-->
+<!--<label>Email</label>-->
+<!--<input type="email" class="form-control" data-ng-model="sd">-->
+<!--</div>-->
 
-                <!--</div>-->
-                <!--<div class="row">-->
-                    <!--<div class="col-lg-4 col-sm-4 col-xs-12 margin-top-10">-->
-                        <!--<label>Team</label>-->
-                        <!--<ui-select data-ng-model="iid">-->
-                            <!--<ui-select-match placeholder="Xin mời chọn"  allow-clear="true"  >{{$select.selected.team}}-->
-                                <!--<a class='btn btn-xs btn-link pull-right clear-buttom'></a></ui-select-match>-->
-                            <!--<ui-select-choices repeat="pos.team_code as pos in optionData ">-->
-                                <!--<span ng-bind-html="pos.team | highlight: $select.search"></span>-->
+<!--</div>-->
+<!--<div class="row">-->
+<!--<div class="col-lg-4 col-sm-4 col-xs-12 margin-top-10">-->
+<!--<label>Team</label>-->
+<!--<ui-select data-ng-model="iid">-->
+<!--<ui-select-match placeholder="Xin mời chọn"  allow-clear="true"  >{{$select.selected.team}}-->
+<!--<a class='btn btn-xs btn-link pull-right clear-buttom'></a></ui-select-match>-->
+<!--<ui-select-choices repeat="pos.team_code as pos in optionData ">-->
+<!--<span ng-bind-html="pos.team | highlight: $select.search"></span>-->
 
-                            <!--</ui-select-choices>-->
-                        <!--</ui-select>-->
-                    <!--</div>-->
-                    <!--<div class="col-lg-4 col-sm-4 col-xs-12 margin-top-10">-->
-                        <!--<label>Mật khâu</label>-->
-                        <!--<input type="password" class="form-control" data-ng-model="a">-->
-                    <!--</div>-->
-            <!--</div>-->
+<!--</ui-select-choices>-->
+<!--</ui-select>-->
+<!--</div>-->
+<!--<div class="col-lg-4 col-sm-4 col-xs-12 margin-top-10">-->
+<!--<label>Mật khâu</label>-->
+<!--<input type="password" class="form-control" data-ng-model="a">-->
+<!--</div>-->
+<!--</div>-->
 
-            <!--</div>-->
+<!--</div>-->
 
 
-            <!--<div class="modal-footer">-->
-                <!--<button type="button" ng-click="$dismiss()" class="btn btn-default" data-dismiss="modal">Huỷ bỏ</button>-->
-                <!--<button type="submit" class="btn btn-primary" data-dismiss="modal">Lưu lại</button>-->
-            <!--</div>-->
-        <!--</form>-->
-    <!--</div>-->
+<!--<div class="modal-footer">-->
+<!--<button type="button" ng-click="$dismiss()" class="btn btn-default" data-dismiss="modal">Huỷ bỏ</button>-->
+<!--<button type="submit" class="btn btn-primary" data-dismiss="modal">Lưu lại</button>-->
+<!--</div>-->
+<!--</form>-->
+<!--</div>-->
 <!--</script>-->
 <!--<div class="main-content">-->
 <!--<div class="row">-->
