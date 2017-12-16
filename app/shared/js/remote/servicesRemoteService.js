@@ -13,13 +13,13 @@ angular.module('remote').factory('servicesRemoteService', function ($http, confi
             });
         },
 
-        buyService: function (opts,successCallback, failureCallback) {
+        buyService: function (opts, successCallback, failureCallback) {
             return $http({
                 url: config.baseURL + '/services/buy',
                 method: 'POST',
                 data: {
-                    id:opts.id,
-                    total:opts.amount
+                    serviceId: opts.serviceId,
+                    total: opts.amount
                 }
             }).success(function (data, status, headers, config) {
                 successCallback(data);

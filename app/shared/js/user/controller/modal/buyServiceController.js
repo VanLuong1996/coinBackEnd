@@ -3,13 +3,13 @@ angular.module('user').controller('buyServiceController',
 
         $scope.service = opts.service;
         $scope.buy = {
-            amount : 1,
-            total : $scope.service.price
+            amount: 1,
+            total: $scope.service.price
         };
 
         $scope.buyService = function () {
             var opts = {
-                id: $scope.service.id,
+                serviceId: $scope.service.id,
                 amount: $scope.buy.amount
             };
             // console.log(opts);
@@ -18,8 +18,16 @@ angular.module('user').controller('buyServiceController',
             }, function (data) {
                 $uibModalInstance.dismiss()
             })
-        }
+        };
 
+        $scope.minusAmount = function () {
+            if ($scope.buy.amount < 2) return;
+            $scope.buy.amount--;
+        };
+
+        $scope.plusAmount = function () {
+            $scope.buy.amount++;
+        };
 
 
         //OK : $uibModalInstance.close()

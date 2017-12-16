@@ -7,13 +7,18 @@
     <div class="modal-body">
         <div class="row" style="padding-top: 10px">
             <div class="col-sm-4">
-                {{service.name}}
+                <p style="font-size: 20px;">{{service.name}}</p>
             </div>
-            <div class="col-sm-4">
-                <input type="number" placeholder="Amount" ng-model="buy.amount">
+            <div class="col-sm-4 text-center" style="font-size: 20px">
+                <i class="fa fa-minus-circle text-danger"  style="font-size: 25px" ng-click="minusAmount()"></i>
+                &nbsp;&nbsp;
+                {{buy.amount}}
+                &nbsp;&nbsp;
+                <i class="fa fa-plus-circle text-success"  style="font-size: 25px"  ng-click="plusAmount()"></i>
             </div>
-            <div class="col-sm-4">
-                {{buy.amount * service.price}}
+            <div class="col-sm-4 text-center">
+                <p style="font-size: 20px;">{{buy.amount * service.price}} $</p>
+
             </div>
         </div>
     </div>

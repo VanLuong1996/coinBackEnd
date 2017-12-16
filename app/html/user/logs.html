@@ -28,7 +28,7 @@
                             <tbody>
 
                             <tr ng-repeat="log in coinLogs | orderBy: '-creatAt'">
-                                <td width="30%">{{log.creatAt | date: 'yyyy-MM-dd HH:MM'}}</td>
+                                <td width="30%">{{log.creatAt | date: 'yyyy-MM-dd HH:MM:ss'}}</td>
                                 <td width="20%">
                                     <span ng-if="log.type == 'ADD_COIN'"><i class="fa fa-plus-circle text-success"></i> </span>
                                     <span ng-if="log.type == 'SUBTRACTION_COIN'"><i
@@ -63,7 +63,7 @@
                             <tbody>
 
                             <tr ng-repeat="log in voteLogs | orderBy: '-creatAt'">
-                                <td width="30%">{{log.creatAt | date: 'yyyy-MM-dd HH:MM'}}</td>
+                                <td width="30%">{{log.creatAt | date: 'yyyy-MM-dd HH:MM:ss'}}</td>
                                 <td width="70%">Voted for <b>{{log.userNameReceive}}</b></td>
                             </tr>
 
