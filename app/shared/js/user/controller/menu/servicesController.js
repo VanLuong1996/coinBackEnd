@@ -1,7 +1,12 @@
 angular.module('user').controller('servicesController',
-    function userListController($scope, $rootScope, $state) {
+    function ($scope, $rootScope, $state, $http, servicesRemoteService) {
+        $scope.serviceList = [];
 
-        var token = localStorage.getItem('token');
-
+        servicesRemoteService.getAllService(function (data) {
+            $scope.serviceList = data.result;
+            console.log($scope.serviceList);
+        }, function (data) {
+            console.log(data);
+        });
 
     });
