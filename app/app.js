@@ -46,8 +46,8 @@ angular.module('gCoinApp').run(function ($rootScope, $state, $timeout, $window,
         tmhDynamicLocale.set($rootScope.language);
 
         if ((typeof (toState.authenticate) === "undefined" || toState.authenticate) && angular.isUndefinedOrNull(sessionStorage.getItem('token'))) {
-            // $state.transitionTo("login");
-            // event.preventDefault();
+            $state.transitionTo("login");
+            event.preventDefault();
         }
         else {
             if (sessionStorage.getItem('token') == null) {
