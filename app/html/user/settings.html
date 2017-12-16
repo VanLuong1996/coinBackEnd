@@ -1,58 +1,117 @@
 <div class="main-content">
     <div class="main-content-left table" style="display: table;">
         <div id="content-list-wrapper">
-            <form class="row form-horizontal" style="padding-top: 80px">
-                <h3 style="padding-left: 135px;padding-bottom: 20px">Information</h3>
-                <div class="form-group">
-                    <label for="input" class="col-md-2 control-label">Mails</label>
-                    <div class="col-sm-10" style="padding-left: 50px">
-                        <input type="text" class="form-control" id="input"
-                               placeholder="Your mails">
+            <div class="row m-t-40 ">
+                <div class="col-sm-12 border-1 p-v-10">
+                    <div class="row margin-0 p-h-10 p-b-20 wallet-block">
+                        <h2>My Profile</h2>
+                    </div>
+                    <div class="row margin-0 p-h-10 p-b-20 wallet-block">
+                        <div class="col-xs-6">
+                            <label>Username</label>
+                            <input type="text" class="form-control" ng-model="username" readonly>
+                        </div>
+                        <div class="col-xs-6">
+                            <label>Email</label>
+                            <input type="text" class="form-control" ng-model="username" readonly>
+                        </div>
+                    </div>
+                    <div class="row margin-0 p-h-10 p-b-20 wallet-block">
+                        <div class="col-xs-6">
+                            <label>Name</label>
+                            <input type="text" class="form-control" aria-label="Name" ng-model="name">
+                        </div>
+                        <div class="col-xs-6">
+                            <label>Phone</label>
+                            <input type="text" class="form-control" ng-model="phone">
+                        </div>
+                    </div>
+                    <div class="row margin-0 p-h-10 p-b-20 wallet-block">
+                        <div class="col-xs-6">
+                            <button type="submit" class="btn btn-accent">Submit</button>
+                        </div>
                     </div>
                 </div>
-                <div class="form-group">
-                    <label for="input1" class="col-md-2 control-label">Country</label>
-                    <div class="col-sm-10" style="padding-left: 50px">
-                        <input type="text" class="form-control" id="input1"
-                               placeholder="YoursCountry">
-                    </div>
-                </div>
-                <h3 style="padding-left: 135px;padding-bottom: 20px">Change Password</h3>
-                <div class="form-group">
-                    <label for="inputEmail" class="col-md-2 control-label">Your'sEmail</label>
-                    <div class="col-sm-10" style="padding-left: 50px">
-                        <input type="email" class="form-control" id="inputEmail"
-                               placeholder="Please Enter Yours'sEmail">
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label for="inputPassword2" class="col-md-2 control-label">OldPassWord</label>
-                    <div class="col-sm-10" style="padding-left: 50px">
-                        <input type="password" class="form-control" id="inputPassword2"
-                               placeholder="Please Enter Yours' OldPassword">
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label for="inputPassword3" class="col-md-2 control-label">NewPassword</label>
-                    <div class="col-sm-10" style="padding-left: 50px">
-                        <input type="password" class="form-control" id="inputPassword3"
-                               placeholder="Please Enter Yours'NewPassword">
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label for="inputPassword4" class="col-md-2 control-label">ReNewPassword</label>
-                    <div class="col-sm-10" style="padding-left: 50px">
-                        <input type="password" class="form-control" id="inputPassword4"
-                               placeholder="Please ReEnter Yours'NewPassword">
-                    </div>
-                </div>
-                <div class="form-group">
-                    <div class="col-sm-offset-3 col-sm-10">
-                        <button type="submit" class="btn btn-primary">Confirm</button>
-                    </div>
-                </div>
+            </div>
 
-            </form>
+            <div class="row m-t-40 ">
+                <div class="col-sm-12 border-1 p-v-10 ">
+                    <div class="row margin-0 p-h-10 p-b-20 wallet-block">
+                        <h2>My Password</h2>
+                    </div>
+                    <div class="row margin-0 p-h-10 p-b-20 wallet-block">
+                        <div class="col-xs-6">
+                            <label>Current password</label>
+                            <input type="password" class="form-control" ng-model="password">
+                        </div>
+                        <div class="col-xs-6">
+                            <label>New Password</label>
+                            <input type="password" class="form-control" ng-model="password">
+                        </div>
+                    </div>
+                    <div class="row margin-0 p-h-10 p-b-20 wallet-block">
+                        <div class="col-xs-6">
+                            <label>Confirm password</label>
+                            <input type="password" class="form-control" ng-model="password">
+                        </div>
+                    </div>
+
+                    <div class="row margin-0 p-h-10 p-b-20 wallet-block">
+                        <div class="col-xs-6">
+                            <button type="submit" class="btn btn-accent">Submit</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
         </div>
     </div>
 </div>
+
+<script data-remove="false" data-concat="false">
+
+    var setHeightTimeout;
+    var calculateLayoutList = function () {
+        if (setHeightTimeout) window.clearTimeout(setHeightTimeout);
+
+        setHeightTimeout = setTimeout(function () {
+            var height = $(window).height();
+            var fullHeightScroll = function ($ele) {
+                if ($ele.length === 0) return;
+                $ele.css({
+                    height: height - $ele.offset().top,
+                    position: 'relative',
+                    'overflow-y': 'hidden'
+                });
+                $ele.perfectScrollbar('update');
+            };
+
+            fullHeightScroll($('#content-list-wrapper'));
+
+            $('.coin-log-block').css({height: $(window).height() - $('.coin-log-block').offset().top - 20})
+
+        });
+    };
+
+    var initScroll = function ($ele) {
+        $ele.perfectScrollbar();
+    };
+
+    initScroll($('#content-list-wrapper'));
+    initScroll($('#main-content'));
+    initScroll($('.scrollingDiv'));
+
+
+    calculateLayoutList();
+
+
+    $(document).ready(function () {
+        $(window).on('resize', function () {
+            calculateLayoutList();
+
+            var height = $(window).height();
+            $('body').css('height', height);
+        });
+
+    });
+</script>
