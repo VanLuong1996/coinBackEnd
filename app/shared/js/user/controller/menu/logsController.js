@@ -1,18 +1,26 @@
 angular.module('user').controller('logsController',
-    function userListController($scope, $rootScope, $state) {
+    function userListController($scope, $rootScope, $state, userRemoteService ) {
 
         var token = localStorage.getItem('token');
 
 
-        $scope.totalItems = 64;
-        $scope.currentPage = 4;
+        $scope.totalItems = 1;
+        $scope.currentPage = 0;
+
+        userRemoteService.listTransaction(function (data) {
+            $scope.coinLogs = data.result.coinTransactionLog;
+            $scope.voteLogs = data.result.voteTransactionLog;
+            console.log(data);
+        }, function (data) {
+
+        });
 
         $scope.setPage = function (pageNo) {
             $scope.currentPage = pageNo;
         };
 
         $scope.pageChanged = function() {
-            $log.log('Page changed to: ' + $scope.currentPage);
+            console.log('Page changed to: ' + $scope.currentPage);
         };
 
         $scope.maxSize = 5;

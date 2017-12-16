@@ -13,19 +13,19 @@
             </div>
             <div class="coin-log-block">
                 <div class="row padding-right">
-                    <div class="col-md-4 p-t-20">
+                    <div class="col-md-4 p-t-20" ng-repeat="staff in staffList track by $index">
                         <div class="product-image-wrapper">
                             <div class="single-products">
                                 <div class="productinfo text-center" style="padding-bottom: 60px">
                                     <img style="width: 350px;height: 262px" class="img-thumbnail"
-                                         src="../../assets/global/img/servicesImg/tunh.jpg"
+                                         src="../../assets/global/img/servicesImg/{{$index%6 + 1}}.jpg"
                                          alt=""/>
                                     <p class="p-t-10">
                                     <span class="text-warning text-bold"
-                                          style="font-size: 130%">Nguyễn Hữu Tú</span><br>
-                                        <span class="text-warning">(Total votes: 14)</span>
+                                          style="font-size: 130%">{{staff.name}}</span><br>
+                                        <span class="text-warning">(Total votes: {{staff.numberVote}})</span>
                                     </p>
-                                    <a class="btn btn-warning vote-button" ng-click="vote('1')">Vote</a>
+                                    <a class="btn btn-warning vote-button" ng-click="vote(staff)">Vote</a>
                                 </div>
                             </div>
                         </div><!--features_items-->
@@ -63,60 +63,6 @@
                             </div>
                         </div><!--features_items-->
                     </div>
-                </div>
-                <div class="row padding-right">
-                    <div class="col-sm-4 p-t-20">
-                        <div class="product-image-wrapper">
-                            <div class="single-products">
-                                <div class="productinfo text-center" style="padding-bottom: 60px">
-                                    <img style="width: 350px;height: 262px" class="img-thumbnail"
-                                         src="../../assets/global/img/servicesImg/quangdn.jpg"
-                                         alt=""/>
-                                    <p class="p-t-10">
-                                    <span class="text-warning text-bold"
-                                          style="font-size: 130%">Đào Ngọc Quang</span><br>
-                                        <span class="text-warning">(Total votes: 9)</span>
-                                    </p>
-                                    <a class="btn btn-warning vote-button" ng-click="vote('1')">Vote</a>
-                                </div>
-                            </div>
-                        </div><!--features_items-->
-                    </div>
-                    <div class="col-sm-4 p-t-20">
-                        <div class="product-image-wrapper">
-                            <div class="single-products">
-                                <div class="productinfo text-center" style="padding-bottom: 60px">
-                                    <img style="width: 350px;height: 262px" class="img-thumbnail"
-                                         src="../../assets/global/img/servicesImg/luongpv.jpg"
-                                         alt=""/>
-                                    <p class="p-t-10">
-                                    <span class="text-warning text-bold"
-                                          style="font-size: 130%">Phạm Văn Lượng</span><br>
-                                        <span class="text-warning">(Total votes: 22)</span>
-                                    </p>
-                                    <a class="btn btn-warning vote-button" ng-click="vote('1')">Vote</a>
-                                </div>
-                            </div>
-                        </div><!--features_items-->
-                    </div>
-                    <div class="col-sm-4 p-t-20">
-                        <div class="product-image-wrapper">
-                            <div class="single-products">
-                                <div class="productinfo text-center" style="padding-bottom: 60px">
-                                    <img style="width: 350px ;height: 262px" class="img-thumbnail"
-                                         src="../../assets/global/img/servicesImg/tiennv.jpg"
-                                         alt=""/>
-                                    <p class="p-t-10">
-                                    <span class="text-warning text-bold"
-                                          style="font-size: 130%">Nguyễn Văn Tiến</span><br>
-                                        <span class="text-warning">(Total votes: 34)</span>
-                                    </p>
-                                    <a class="btn btn-warning vote-button" ng-click="vote('1')">Vote</a>
-                                </div>
-                            </div>
-                        </div><!--features_items-->
-                    </div>
-
                 </div>
             </div>
         </div>

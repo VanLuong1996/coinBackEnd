@@ -84,6 +84,18 @@ angular.module('remote').factory('userRemoteService', function ($http, config) {
             }).error(function (data, status, headers, config) {
                 failureCallback(data, status, headers, config);
             });
+        },
+
+        listTransaction: function (successCallback, failureCallback) {
+            return $http({
+                url: config.baseURL + '/transactions/listByUser',
+                method: 'GET',
+                data: ''
+            }).success(function (data, status, headers, config) {
+                successCallback(data, status, headers, config);
+            }).error(function (data, status, headers, config) {
+                failureCallback(data, status, headers, config);
+            });
         }
     };
 });
