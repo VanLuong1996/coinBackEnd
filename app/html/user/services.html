@@ -12,98 +12,108 @@
                 </div>
             </div>
             <div class="coin-log-block">
-        <div class="row padding-right" style="padding-top: 35px ;padding-bottom: 35px">
-            <div class="col-sm-4" ng-repeat="service in serviceList">
-                <div class="product-image-wrapper">
-                    <div class="single-products">
-                        <div class="productinfo text-center" style="padding-bottom: 60px">
-                            <img style="width: 399px;height: 262px" class="img-thumbnail"
-                                 src="assets/img/service.jpg" alt=""/>
-                            <p class="p-t-10">
-                                    <span class="text-warning text-bold"
-                                          style="font-size: 130%;padding-bottom: 3px">GCoin: {{service.price}}</span><br> </p>
-                                <h3 style="color:white">{{service.name}}</h3>
-                            <button type="button" class="btn btn-lg btn-warning" ng-click="buy(service)" style="border-radius: 5px">Buy Ticket</button>
-                        </div>
+                <div class="row padding-right" style="padding-top: 35px ;padding-bottom: 35px">
+                    <div class="col-sm-4" ng-repeat="service in serviceList">
+                        <div class="product-image-wrapper">
+                            <div class="single-products">
+                                <div class="producti nfo text-center" style="padding-bottom: 60px">
+                                    <img style="width: 399px;height: 262px;" class="img-thumbnail"
+                                         src="assets/img/{{($index%6)+1}}0.jpg" alt=""/>
+                                    <p>
+                                        <span style="color:white; font-size: 35px;padding-top: 30px">{{service.name}}</span>
+                                        <span class="text-warning" style="font-size: 130%;padding-bottom: 3px">(${{service.price}})</span>
+                                    </p>
+
+                                    <button type="button" class="btn btn-lg btn-warning"
+                                            style=" border-radius: 5px !important;" ng-click="buy(service)">
+                                        Buy
+                                    </button>
+                                </div>
+                            </div>
+                        </div><!--features_items-->
                     </div>
-                </div><!--features_items-->
-            </div>
-            <div class="col-lg-5 col-sm-5 col-md-5  main-right" ui-view="detail"
-                 ng-if="$state.includes('users.detail')"></div>
-        </div>
-            <div id="myModal" class="modal fade">
-                <div class="modal-dialog">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                            <h4 class="modal-title">Confirmation</h4>
-                        </div>
-                        <div class="modal-body">
-                            <p>Do you want to save changes you made to document before closing?</p>
-                            <p class="text-warning"><small>If you don't save, your changes will be lost.</small></p>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                            <button type="button" class="btn btn-primary">Save changes</button>
-                        </div>
-                    </div>
+                    <div class="col-lg-5 col-sm-5 col-md-5  main-right" ui-view="detail"
+                         ng-if="$state.includes('users.detail')"></div>
                 </div>
-            </div>
-        <script data-remove="false" data-concat="false">
-            function showDetail(id) {
-                var campaignElement = $('.customer-list');
-                campaignElement.each(function () {
-                    if ($(this).hasClass('background-selected')) {
-                        $(this).removeClass('background-selected');
-                    }
-                });
-                $('#' + id).addClass('background-selected');
-            }
 
-            var setHeightTimeout;
-            var calculateLayoutList = function () {
-                if (setHeightTimeout) window.clearTimeout(setHeightTimeout);
+                    <h3 class="m-b-xs" style="padding-left: 50px;padding-bottom: 30px">History</h3>
 
-                setHeightTimeout = setTimeout(function () {
-                    var height = $(window).height();
-                    var fullHeightScroll = function ($ele) {
-                        if ($ele.length === 0) return;
-                        $ele.css({
-                            height: height - $ele.offset().top,
-                            position: 'relative',
-                            'overflow-y': 'hidden'
+                <table width="100%" style="line-height: 2" class="table table-striped table-hover">
+                    <thead class="m-b-10">
+                    <tr>
+                        <td width="10%" class="table-header-label text-center">Service</td>
+                        <td width="30%" class="table-header-label text-center">Price</td>
+                        <td width="030%" class="table-header-label text-center">Amount</td>
+                        <td width="30%" class="table-header-label text-center">Date</td>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr ng-repeat="trans in transactionList">
+                        <td width="10%" class="text-center">{{trans.name}}</td>
+                        <td width="30%" class="text-center">
+                            ${{trans.price}}
+                        <td width="30%" class="text-center">
+                         {{trans.total}}
+                        </td>
+                        <td width="30%" class="text-center"><time>{{trans.buyDate | date:'yyyy-MM-dd HH:mm'}}</time></td>
+                    </tr>
+                    </tbody>
+                </table>
+                <script data-remove="false" data-concat="false">
+                    function showDetail(id) {
+                        var campaignElement = $('.customer-list');
+                        campaignElement.each(function () {
+                            if ($(this).hasClass('background-selected')) {
+                                $(this).removeClass('background-selected');
+                            }
                         });
-                        $ele.perfectScrollbar('update');
+                        $('#' + id).addClass('background-selected');
+                    }
+
+                    var setHeightTimeout;
+                    var calculateLayoutList = function () {
+                        if (setHeightTimeout) window.clearTimeout(setHeightTimeout);
+
+                        setHeightTimeout = setTimeout(function () {
+                            var height = $(window).height();
+                            var fullHeightScroll = function ($ele) {
+                                if ($ele.length === 0) return;
+                                $ele.css({
+                                    height: height - $ele.offset().top,
+                                    position: 'relative',
+                                    'overflow-y': 'hidden'
+                                });
+                                $ele.perfectScrollbar('update');
+                            };
+
+                            fullHeightScroll($('#content-list-wrapper'));
+
+                        });
                     };
 
-                    fullHeightScroll($('#content-list-wrapper'));
+                    var initScroll = function ($ele) {
+                        $ele.perfectScrollbar();
+                    };
 
-                });
-            };
-
-            var initScroll = function ($ele) {
-                $ele.perfectScrollbar();
-            };
-
-            initScroll($('#content-list-wrapper'));
-            initScroll($('#main-content'));
-            initScroll($('.scrollingDiv'));
+                    initScroll($('#content-list-wrapper'));
+                    initScroll($('#main-content'));
+                    initScroll($('.scrollingDiv'));
 
 
-            calculateLayoutList();
-
-
-            $(document).ready(function () {
-                $(window).on('resize', function () {
                     calculateLayoutList();
 
-                    var height = $(window).height();
-                    $('body').css('height', height);
-                });
-            });
-        </script>
+
+                    $(document).ready(function () {
+                        $(window).on('resize', function () {
+                            calculateLayoutList();
+
+                            var height = $(window).height();
+                            $('body').css('height', height);
+                        });
+                    });
+                </script>
+            </div>
         </div>
-</div>
-</div>
+    </div>
 
 </div>

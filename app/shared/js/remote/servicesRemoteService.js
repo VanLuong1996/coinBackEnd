@@ -27,6 +27,17 @@ angular.module('remote').factory('servicesRemoteService', function ($http, confi
             }).error(function (data, status, headers, config) {
                 failureCallback(data, status, headers, config);
             });
+        },
+        getListTransaction: function (successCallback, failureCallback) {
+            return $http({
+                url: config.baseURL + '/services/listOwnedServices',
+                method: 'GET',
+                data: ''
+            }).success(function (data, status, headers, config) {
+                successCallback(data);
+            }).error(function (data, status, headers, config) {
+                failureCallback(data, status, headers, config);
+            });
         }
     };
 });

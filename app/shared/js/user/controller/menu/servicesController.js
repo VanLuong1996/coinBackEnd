@@ -9,6 +9,13 @@ angular.module('user').controller('servicesController',
             console.log(data);
         });
 
+        servicesRemoteService.getListTransaction(function (data) {
+            $scope.serviceList = data.result;
+            console.log($scope.serviceList);
+        }, function (data) {
+            console.log(data);
+        });
+
         $scope.buy = function (service) {
             userModalService.openBuyService({service : service}, function () {
                 $timeout(function () {
