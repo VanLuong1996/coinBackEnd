@@ -56,13 +56,13 @@
 <section id="wrapper" class="ng-cloak">
     <!-- START HEADER -->
     <header-content
-        ng-if="!$state.includes('login') && !$state.includes('forgotPassword')&& !$state.includes('resetPassword')"></header-content>
+        ng-if="!$state.includes('login')"></header-content>
     <!-- /#header -->
     <!--/ END HEADER -->
 
     <!-- START SIDEBAR LEFT -->
     <sidebar-left
-        ng-if="!$state.includes('login') && !$state.includes('forgotPassword')&& !$state.includes('resetPassword')" user="user"></sidebar-left>
+        ng-if="!$state.includes('login')"></sidebar-left>
     <!-- /#sidebar-left -->
     <!--/ END SIDEBAR LEFT -->
 
@@ -70,7 +70,7 @@
 
     {{$state.name}}
     <section id="page-content"
-             ng-class="{'margin-lef-0 height-100-percent' : ($state.includes('login') || $state.includes('forgotPassword') || $state.includes('resetPassword'))}">
+             ng-class="{'margin-lef-0 height-100-percent' : ($state.includes('login'))}">
 
         <!-- START HEADER CONTENT -->
         <!-- <breadcrumbs></breadcrumbs> -->
@@ -78,7 +78,7 @@
         <!--/ END HEADER CONTENT -->
 
         <!-- START BODY CONTENT -->
-        <div id="" class="container-fluid">
+        <div id="" class="container-fluid" style="padding-left: 0; padding-right: 0">
             <div ui-view="list" class="body-content" id="listView">
             </div>
 
