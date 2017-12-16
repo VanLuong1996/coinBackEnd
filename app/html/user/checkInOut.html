@@ -7,109 +7,64 @@
                         <i class="pe page-header-icon pe-7s-graph3 header-icon-45"></i>
                     </div>
                     <div class="pull-left">
-                        <h3 class="m-b-xs">CHECK IN OUT</h3>
+                        <h3 class="m-b-xs">CHECK IN-OUT</h3>
                     </div>
                 </div>
             </div>
+
             <div class="row">
                 <div class="col-sm-12 border-1 p-v-10 coin-log-block">
                     <div class="row margin-0 p-h-10">
-                        <div style="padding-top: 50px;padding-bottom: 50px;padding-left: 700px">
-                            <input type="button" style="width: 250px;height: 50px" value="Check In"
-                                   class="btn btn-warning">
+                        <div class="col-sm-4 col-sm-offset-4 text-center p-v-30">
+                            <button type="button" class="btn btn-accent btn-block btn-deposit btn-check-in-out"
+                                    ng-click="checkInOut()">
+                                Check in now!
+                            </button>
+                            <button type="button" class="btn btn-accent btn-block btn-deposit btn-check-in-out"
+                                    ng-show="false"
+                                    ng-click="checkInOut()">
+                                Check out now!
+                            </button>
+                            <p class="text-warning text-bold p-t-10" style="font-size: 140%">Total : 22</p>
                         </div>
                         <table width="100%" style="line-height: 2" class="table table-striped">
                             <thead class="m-b-10">
                             <tr>
-                                <td width="25%" class="table-header-label">Name</td>
-                                <td width="25%" class="table-header-label">Check In Time</td>
-                                <td width="25%" class="table-header-label">Check Out Time</td>
-                                <td width="25%" class="table-header-label">Date</td>
+                                <td width="10%" class="table-header-label p-l-15">No</td>
+                                <td width="10%" class="table-header-label text-center">Date</td>
+                                <td width="25%" class="table-header-label text-center">Check In Time</td>
+                                <td width="25%" class="table-header-label text-center">Check Out Time</td>
+                                <td width="25%" class="table-header-label text-center">Total</td>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td width="10%" class="p-l-15">1</td>
+                                <td width="10%" class="text-center">17/12/2017</td>
+                                <td width="25%" class="text-center">
+                                    <i class="fa fa-check text-success"></i>8h30
+                                <td width="25%" class="text-center">
+                                    --
+                                </td>
+                                <td width="25%" class="text-center">--</td>
                             </tr>
 
+
                             <tr>
-                                <td width="25%">QuangDn</td>
-                                <td width="25%"><i class="fa fa-check text-info"></i>8h30 AM
-                                <td width="25%"><i class="fa fa-caret-right text-danger"></i>8h30 PM</td>
-                                <td width="25%">30/12/2017</td>
+                                <td width="10%" class="p-l-15">2</td>
+                                <td width="10%" class="text-center">16/12/2017</td>
+                                <td width="25%" class="text-center"><i class="fa fa-check text-success"></i>8h30
+                                <td width="25%" class="text-center"><i class="fa fa-caret-right text-danger"></i>18:00
+                                </td>
+                                <td width="25%" class="text-center">1</td>
                             </tr>
                             <tr>
-                                <td width="25%">QuangDn</td>
-                                <td width="25%"><i class="fa fa-check text-info"></i>8h30 AM
-                                <td width="25%"><i class="fa fa-caret-right text-danger"></i>8h30 PM</td>
-                                <td width="25%">30/12/2017</td>
-                            </tr>
-                            <tr>
-                                <td width="25%">QuangDn</td>
-                                <td width="25%"><i class="fa fa-check text-info"></i>8h30 AM
-                                <td width="25%"><i class="fa fa-caret-right text-danger"></i>8h30 PM</td>
-                                <td width="25%">30/12/2017</td>
-                            </tr>
-                            <tr>
-                                <td width="25%">QuangDn</td>
-                                <td width="25%"><i class="fa fa-check text-info"></i>8h30 AM
-                                <td width="25%"><i class="fa fa-caret-right text-danger"></i>8h30 PM</td>
-                                <td width="25%">30/12/2017</td>
-                            </tr>
-                            <tr>
-                                <td width="25%">QuangDn</td>
-                                <td width="25%"><i class="fa fa-check text-info"></i>8h30 AM
-                                <td width="25%"><i class="fa fa-caret-right text-danger"></i>8h30 PM</td>
-                                <td width="25%">30/12/2017</td>
-                            </tr>
-                            <tr>
-                                <td width="25%">QuangDn</td>
-                                <td width="25%"><i class="fa fa-check text-info"></i>8h30 AM
-                                <td width="25%"><i class="fa fa-caret-right text-danger"></i>8h30 PM</td>
-                                <td width="25%">30/12/2017</td>
-                            </tr>
-                            <tr>
-                                <td width="25%">QuangDn</td>
-                                <td width="25%"><i class="fa fa-check text-info"></i>8h30 AM
-                                <td width="25%"><i class="fa fa-caret-right text-danger"></i>8h30 PM</td>
-                                <td width="25%">30/12/2017</td>
-                            </tr>
-                            <tr>
-                                <td width="25%">QuangDn</td>
-                                <td width="25%"><i class="fa fa-check text-info"></i>8h30 AM
-                                <td width="25%"><i class="fa fa-caret-right text-danger"></i>8h30 PM</td>
-                                <td width="25%">30/12/2017</td>
-                            </tr>
-                            <tr>
-                                <td width="25%">QuangDn</td>
-                                <td width="25%"><i class="fa fa-check text-info"></i>8h30 AM
-                                <td width="25%"><i class="fa fa-caret-right text-danger"></i>8h30 PM</td>
-                                <td width="25%">30/12/2017</td>
-                            </tr>
-                            <tr>
-                                <td width="25%">QuangDn</td>
-                                <td width="25%"><i class="fa fa-check text-info"></i>8h30 AM
-                                <td width="25%"><i class="fa fa-caret-right text-danger"></i>8h30 PM</td>
-                                <td width="25%">30/12/2017</td>
-                            </tr>
-                            <tr>
-                                <td width="25%">QuangDn</td>
-                                <td width="25%"><i class="fa fa-check text-info"></i>8h30 AM
-                                <td width="25%"><i class="fa fa-caret-right text-danger"></i>8h30 PM</td>
-                                <td width="25%">30/12/2017</td>
-                            </tr>
-                            <tr>
-                                <td width="25%">QuangDn</td>
-                                <td width="25%"><i class="fa fa-check text-info"></i>8h30 AM
-                                <td width="25%"><i class="fa fa-caret-right text-danger"></i>8h30 PM</td>
-                                <td width="25%">30/12/2017</td>
-                            </tr>
-                            <tr>
-                                <td width="25%">QuangDn</td>
-                                <td width="25%"><i class="fa fa-check text-info"></i>8h30 AM
-                                <td width="25%"><i class="fa fa-caret-right text-danger"></i>8h30 PM</td>
-                                <td width="25%">30/12/2017</td>
-                            </tr>
-                            <tr>
-                                <td width="25%">QuangDn</td>
-                                <td width="25%"><i class="fa fa-check text-info"></i>8h30 AM
-                                <td width="25%"><i class="fa fa-caret-right text-danger"></i>8h30 PM</td>
-                                <td width="25%">30/12/2017</td>
+                                <td width="10%" class="p-l-15">3</td>
+                                <td width="10%" class="text-center">15/12/2017</td>
+                                <td width="25%" class="text-center"><i class="fa fa-check text-success"></i>8h30
+                                <td width="25%" class="text-center"><i class="fa fa-caret-right text-danger"></i>18:00
+                                </td>
+                                <td width="25%" class="text-center">1</td>
                             </tr>
                             </tbody>
                         </table>
