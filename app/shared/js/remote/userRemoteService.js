@@ -32,13 +32,11 @@ angular.module('remote').factory('userRemoteService', function ($http, config) {
         },
 
 
-        checkInOut: function (id, successCallback, failureCallback) {
+        checkInOut: function (successCallback, failureCallback) {
             return $http({
-                url: config.baseURL + '/checkInOut/timekeeping' ,
+                url: config.baseURL + '/checkInOut' ,
                 method: 'POST',
-                data: {
-                    userId : id
-                }
+                data: ''
             }).success(function (data, status, headers, config) {
                 successCallback(data, status, headers, config);
             }).error(function (data, status, headers, config) {
