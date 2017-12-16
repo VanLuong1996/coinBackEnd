@@ -7,3 +7,17 @@
     height: 100%;
     background: $color-theme-gem;
 }
+
+.background-color-them {
+    color: white;
+    background: $color-theme !important;
+}
+
+.save-button {
+    color: white !important;
+    background: $color-theme !important;
+}
+
+.border-color-them  {
+    border-color: $color-theme !important;
+}

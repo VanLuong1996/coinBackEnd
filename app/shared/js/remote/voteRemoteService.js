@@ -15,7 +15,7 @@ angular.module('remote').factory('voteRemoteService', function ($http, config) {
 
         voteToStaff: function (votedUserId, successCallback, failureCallback) {
             return $http({
-                url: config.baseURL + '/votes/voteToStaff',
+                url: config.baseURL + '/votes/voteToStaff/' + votedUserId,
                 method: 'POST',
                 data: ''
             }).success(function (data, status, headers, config) {

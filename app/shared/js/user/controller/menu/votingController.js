@@ -1,6 +1,7 @@
 angular.module('user').controller('votingController',
-    function userListController($scope, $rootScope, $state, voteRemoteService) {
+    function userListController($scope, $rootScope, $state, voteRemoteService, commonModalService) {
 
+        $scope.user  = angular.fromJson(sessionStorage.getItem("user"));
         voteRemoteService.getBestStaffs(function (data) {
             $scope.staffList = data.result;
         }, function (data) {
@@ -8,11 +9,13 @@ angular.module('user').controller('votingController',
         });
 
         $scope.vote = function (staff) {
-            voteRemoteService.voteToStaff(staff.id, function (data) {
-
-            }, function (data) {
-
-            })
+            commonModalService.popupConfirmMessage({message : "Do you want to vote for this guy?"}, function () {
+                voteRemoteService.voteToStaff(staff.id, function (data) {
+                    alert(data.msg);
+                }, function (data) {
+                    alert(data.msg);
+                })
+            });
         };
 
 
