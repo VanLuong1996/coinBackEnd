@@ -19,8 +19,6 @@ angular.module('gCoinApp').constant('config', {
     appVersion: 0.1,
     /*=====================Server URL===================================*/
 
-    baseURL: 'http://localhost:8080/gem-coin',
-
-    apiVersion : 'v1.0'
+    baseURL: 'http://172.16.10.105:8099/gcoin',
 
 });

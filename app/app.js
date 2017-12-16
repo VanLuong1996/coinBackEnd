@@ -74,8 +74,6 @@ angular.module('gCoinApp').run(function ($rootScope, $state, $timeout, $window,
         $timeout(function () {
             $state.transitionTo('login', {reload: true});
             $('#loading').fadeOut();
-            $rootScope.avatarUser = undefined;
-            $rootScope.nameOfUser = undefined;
         }, 500);
 
     };
