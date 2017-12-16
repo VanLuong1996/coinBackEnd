@@ -9,26 +9,26 @@
                     <div class="row margin-0 p-h-10 p-b-20 wallet-block">
                         <div class="col-xs-6">
                             <label>Username</label>
-                            <input type="text" class="form-control" ng-model="username" readonly>
+                            <input type="text" class="form-control" ng-model="user.username" readonly>
                         </div>
                         <div class="col-xs-6">
                             <label>Email</label>
-                            <input type="text" class="form-control" ng-model="username" readonly>
+                            <input type="text" class="form-control" ng-model="user.email" readonly>
                         </div>
                     </div>
                     <div class="row margin-0 p-h-10 p-b-20 wallet-block">
                         <div class="col-xs-6">
                             <label>Name</label>
-                            <input type="text" class="form-control" aria-label="Name" ng-model="name">
+                            <input type="text" class="form-control" aria-label="Name" ng-model="user.name">
                         </div>
                         <div class="col-xs-6">
                             <label>Phone</label>
-                            <input type="text" class="form-control" ng-model="phone">
+                            <input type="text" class="form-control" ng-model="user.phone">
                         </div>
                     </div>
                     <div class="row margin-0 p-h-10 p-b-20 wallet-block">
                         <div class="col-xs-6">
-                            <button type="submit" class="btn btn-accent">Submit</button>
+                            <button type="submit" class="btn btn-accent" ng-click="updateUserInfo()">Submit</button>
                         </div>
                     </div>
                 </div>
@@ -58,7 +58,7 @@
 
                     <div class="row margin-0 p-h-10 p-b-20 wallet-block">
                         <div class="col-xs-6">
-                            <button type="submit" class="btn btn-accent">Submit</button>
+                            <button type="submit" class="btn btn-accent" ng-click="changePassword()">Submit</button>
                         </div>
                     </div>
                 </div>

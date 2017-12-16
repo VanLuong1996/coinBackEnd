@@ -1,7 +1,16 @@
 angular.module('user').controller('settingController',
     function userListController($scope, $rootScope, $state) {
 
-        var token = localStorage.getItem('token');
+        $scope.user = angular.fromJson(sessionStorage.getItem('user'));
 
+        $scope.updateUserInfo = function () {
+
+        };
+
+
+
+        $scope.changePassword = function () {
+
+        }
 
     });

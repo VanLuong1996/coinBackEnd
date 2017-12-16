@@ -33,7 +33,6 @@ angular.module('gCoinApp').run(function ($rootScope, $state, $timeout, $window,
 
     $rootScope.$state = $state;
     $rootScope.modals = {};
-    $rootScope.screens = sessionStorage.getItem('screens');
     $rootScope.loggedInUser = angular.fromJson(sessionStorage.getItem("user"));
 
     gettextCatalog.debug = false;
@@ -43,7 +42,7 @@ angular.module('gCoinApp').run(function ($rootScope, $state, $timeout, $window,
 
 
     $rootScope.$on("$stateChangeStart", function (event, toState, toParams, fromState, fromParams, authService) {
-        $rootScope.language = sessionStorage.getItem('language') || 'vi';
+        $rootScope.loggedInUser = angular.fromJson(sessionStorage.getItem("user"));
         tmhDynamicLocale.set($rootScope.language);
 
         if ((typeof (toState.authenticate) === "undefined" || toState.authenticate) && angular.isUndefinedOrNull(sessionStorage.getItem('token'))) {

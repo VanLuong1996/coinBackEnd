@@ -4,8 +4,8 @@ angular.module('user').controller('walletController',
         var token = localStorage.getItem('token');
 
         $scope.openDepositModal = function () {
-            userModalService.openDepositModal({address: '14ub6hPc5ytfNEy679R78hdBwQYGARvQhx'})
-        }
+            userModalService.openDepositModal({address: '14ub6hPc5ytfNEy679R78hdBwQYGARvQhx'});
+        };
 
 
     });

@@ -6,7 +6,7 @@ angular.module('user').controller('loginController',
 
         $scope.login = function () {
             sessionStorage.clear();
-            // $('#loading').fadeIn();
+            $('#loading').fadeIn();
 
             $scope.error = false;
 
@@ -17,11 +17,21 @@ angular.module('user').controller('loginController',
                     username: $scope.username,
                     password: $scope.password
                 };
+
                 userRemoteService.login(opts, function (data) {
+
+                    $('#loading').fadeOut();
                     sessionStorage.setItem("token", data.result.access_token);
                     sessionStorage.setItem("user", JSON.stringify(data.result.userLoginResponse.userDTO));
+
+                    if($scope.remember){
+                        localStorage.setItem("token", data.result.access_token);
+                        localStorage.setItem("user", JSON.stringify(data.result.userLoginResponse.userDTO));
+                    }
+
                     $state.transitionTo("wallet");
-                }, function (data, status, headers, config) {
+
+                }, function (data) {
                     console.log(data);
                     $('#loading').fadeOut();
 
