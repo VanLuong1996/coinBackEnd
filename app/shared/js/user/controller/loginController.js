@@ -1,5 +1,6 @@
 angular.module('user').controller('loginController',
-    function ($scope, $rootScope, $state, $http, userRemoteService) {
+    function ($scope, $rootScope, $state, $http, $timeout,
+              userRemoteService) {
 
         $scope.user = undefined;
 
@@ -24,12 +25,16 @@ angular.module('user').controller('loginController',
                     sessionStorage.setItem("token", data.result.access_token);
                     sessionStorage.setItem("user", JSON.stringify(data.result.userLoginResponse.userDTO));
 
-                    if($scope.remember){
+                    if ($scope.remember) {
                         localStorage.setItem("token", data.result.access_token);
                         localStorage.setItem("user", JSON.stringify(data.result.userLoginResponse.userDTO));
                     }
 
-                    $state.transitionTo("wallet");
+                    $('#loading').fadeOut();
+
+                    $timeout(function () {
+                        $state.transitionTo("wallet");
+                    }, 100);
 
                 }, function (data) {
                     console.log(data);
