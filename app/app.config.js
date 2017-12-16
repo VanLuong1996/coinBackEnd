@@ -1,7 +1,8 @@
 angular.module('gCoinApp').config(function ($httpProvider, $stateProvider, $compileProvider,
                                           tmhDynamicLocaleProvider) {
 
-    $httpProvider.defaults.headers.get = {'Content-Type': 'text/plain'};
+    // $httpProvider.defaults.headers.get = {'Content-Type': 'text/plain'};
+    $httpProvider.defaults.headers.get = {'Content-Type': 'application/json'};
     $httpProvider.defaults.headers.common = {'Content-Type': 'application/json'};
     $httpProvider.defaults.headers.post = {'Content-Type': 'application/json'};
     $httpProvider.defaults.headers.patch = {'Content-Type': 'application/json'};
@@ -19,6 +20,6 @@ angular.module('gCoinApp').constant('config', {
     appVersion: 0.1,
     /*=====================Server URL===================================*/
 
-    baseURL: 'http://172.16.10.105:8099/gcoin',
+    baseURL: 'http://172.16.10.63:8080/gcoin',
 
 });

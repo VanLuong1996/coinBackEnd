@@ -1,12 +1,15 @@
 angular.module('user').controller('votingController',
-    function userListController($scope, $rootScope, $state) {
+    function userListController($scope, $rootScope, $state, voteRemoteService) {
 
-        var token = localStorage.getItem('token');
+        voteRemoteService.getBestStaffs(function (data) {
+
+        }, function (data) {
+
+        });
 
         $scope.vote = function () {
 
         };
-
 
 
     });

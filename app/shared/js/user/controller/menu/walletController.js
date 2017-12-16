@@ -3,14 +3,20 @@ angular.module('user').controller('walletController',
 
         var token = localStorage.getItem('token');
 
+        $scope.user = {
+            numberCoin : 0,
+            priceCoin : 0
+        };
+
         userRemoteService.getUserCoin(function (data) {
-            console.log(data);
+            $scope.user = data;
+            console.log($scope.user);
         }, function (data) {
 
         });
 
         $scope.openDepositModal = function () {
-            userModalService.openDepositModal({address: '14ub6hPc5ytfNEy679R78hdBwQYGARvQhx'});
+            userModalService.openDepositModal({address: $scope.user.address});
         };
 
 
