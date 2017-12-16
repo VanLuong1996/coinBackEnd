@@ -12,7 +12,12 @@ angular.module('user').controller('buyServiceController',
                 id: $scope.service.id,
                 amount: $scope.buy.amount
             };
-            servicesRemoteService.buyService($scope.service);
+            console.log(opts);
+            servicesRemoteService.buyService(opts, function (data) {
+
+            }, function (data) {
+                alert(data.message);
+            })
         }
 
 

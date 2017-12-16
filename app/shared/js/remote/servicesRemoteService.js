@@ -18,8 +18,8 @@ angular.module('remote').factory('servicesRemoteService', function ($http, confi
                 url: config.baseURL + '/services/buy',
                 method: 'POST',
                 data: {
-                    id: opts.id,
-                    amount: opts.amount
+                    id:opts.id,
+                    name:opts.amount
                 }
             }).success(function (data, status, headers, config) {
                 successCallback(data);
